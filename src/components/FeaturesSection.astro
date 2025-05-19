@@ -1,0 +1,43 @@
+---
+import { ShieldCheck, Fingerprint, Search } from "@lucide/astro";
+import content from "../data/caliptra-content.json";
+const { section = content.sections.find((s) => s.type === "features"), features = content.features } = Astro.props;
+---
+
+<section class="features" id={section.id}>
+  <div class="container">
+    {section.tag && <div class="section-tag">{section.tag}</div>}
+    <div class="features-grid">
+      {
+        features.map((feature, index) => (
+          <div class="feature-card" style={`animation-delay: ${index * 100}ms`}>
+            <div class="icon-wrapper">
+              {feature.title.includes("Boot") && <ShieldCheck size={24} />}
+              {feature.title.includes("Identity") && <Fingerprint size={24} />}
+              {feature.title.includes("Attestation") && <Search size={24} />}
+            </div>
+            <h3>{feature.title}</h3>
+            <p class="feature-description">{feature.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+  .icon-wrapper {
+    color: var(--accent-primary);
+    margin-bottom: 0.5rem;
+  }
+  .feature-description {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+</style>

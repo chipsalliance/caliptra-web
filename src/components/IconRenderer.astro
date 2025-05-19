@@ -1,0 +1,27 @@
+---
+import { ShieldCheck, Fingerprint, Search, Cpu, Shield, Server, Code, Users, Network, Grid2x2Check } from "@lucide/astro";
+
+export interface Props {
+  name: string;
+  size?: number;
+}
+
+const { name, size = 16 } = Astro.props;
+
+const iconComponents = {
+  ShieldCheck,
+  Fingerprint,
+  Search,
+  Cpu,
+  Shield,
+  Server,
+  Code,
+  Users,
+  Network,
+  Grid2x2Check,
+};
+
+const Icon = iconComponents[name];
+---
+
+{Icon && <Icon size={size} />}

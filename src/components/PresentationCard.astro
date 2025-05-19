@@ -1,0 +1,115 @@
+---
+import { Calendar, VideoIcon, FileText, ExternalLink } from "@lucide/astro";
+
+const { presentation } = Astro.props;
+const formattedDate = new Date(presentation.date).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric'
+});
+---
+
+<div class="presentation-card">
+  <img src={presentation.image} alt={presentation.title} class="presentation-card-image" />
+  <div class="presentation-card-content">
+    <div class="presentation-card-meta">
+        <div class="meta-item">
+          <Calendar size={14} />
+          <span>{formattedDate}</span>
+        </div>
+        <div class="meta-item">
+          <typeIcon size={14} />
+          <span>{presentation.conference}</span>
+        </div>
+      </div>
+    <h3 class="presentation-card-title">
+      <a href={presentation.url} target="_blank" rel="noopener noreferrer">{presentation.title}</a>
+    </h3>
+    <p class="presentation-card-description">{presentation.description}</p>
+  </div>
+</div>
+
+<style>
+  .presentation-card {
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+  }
+
+  .presentation-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .presentation-card-image {
+    width: 100%;
+    border-radius: var(--border-radius);
+    aspect-ratio: 16/9;
+    padding-bottom: 0.75rem;
+    object-fit: cover;
+  }
+
+  .presentation-card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .presentation-card-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .presentation-card-title a {
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+
+  .presentation-card-title a:hover {
+    color: var(--accent-primary);
+    text-decoration: none;
+  }
+
+  .presentation-card-description {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .presentation-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-top: auto;
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .external-link {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-left: auto;
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .external-link:hover {
+    text-decoration: underline;
+  }
+</style>

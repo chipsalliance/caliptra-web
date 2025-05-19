@@ -1,0 +1,64 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import PresentationCard from "../components/PresentationCard.astro";
+import newsData from "../data/caliptra-news.json";
+
+const sortedPresentations = [...newsData.presentations].sort((a, b) => {
+  return new Date(b.date).getTime() - new Date(a.date).getTime();
+});
+---
+
+<MainLayout title="Caliptra Presentations" description={newsData.meta.description}>
+  <section class="section-header" style="padding-top: 6rem;">
+    <div class="section-tag">News</div>
+    <div class="container">
+      <h1>{newsData.meta.title}</h1>
+      <p class="section-description">{newsData.meta.description}</p>
+    </div>
+  </section>
+
+  <section class="presentations-grid section">
+    <div class="container">
+      <div class="presentations-grid-container">
+        {sortedPresentations.map(presentation => (
+          <div class="presentations-grid-item">
+            <PresentationCard presentation={presentation} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+
+  .presentations-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+
+  .presentations-grid {
+    padding-top: 2rem;
+  }
+
+  .presentations-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .presentations-grid-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .presentations-hero h1 {
+      font-size: 2rem;
+    }
+    
+    .presentations-description {
+      font-size: 1rem;
+    }
+  }
+</style>

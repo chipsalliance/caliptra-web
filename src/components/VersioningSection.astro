@@ -1,0 +1,257 @@
+---
+import content from "../data/caliptra-content.json";
+const { versioning = content.versioning } = Astro.props;
+---
+
+<section class="versioning section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">{versioning.tag}</div>
+      <h2>{versioning.title}</h2>
+      <p class="section-description">{versioning.description}</p>
+    </div>
+
+    <div class="timeline-container">
+      {
+        // Reverse the versions to get the newest version on top
+        versioning.versions.reverse().map((version, index) => (
+          <div class="timeline-item" style={`animation-delay: ${index * 150}ms`}>
+            <div class="timeline-left">
+              <div style="position: sticky; top: 70px">
+                <h3 class="version-sticky">{version.name}</h3>
+              </div>
+            </div>
+
+            <div class="timeline-center">
+              <div class="timeline-line"></div>
+              <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-right">
+              <div class="version-content">
+                {version.content.includes("Additional Features") && (
+                  <div class="features-section">
+                    <h4>Additional Features</h4>
+                    <ul class="feature-list">
+                      {version.content.split("\n").map((line) => {
+                        if (line.startsWith("-")) {
+                          return <li class="feature-item">{line.substring(1).trim()}</li>;
+                        }
+                        return null;
+                      })}
+                    </ul>
+                    <div class="version-notes">
+                      {version.content.split("\n").map((line) => {
+                        if (line.startsWith("*")) {
+                          return <p class="version-note">{line}</p>;
+                        }
+                        return null;
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {version.table && (
+                  <div class="compatibility-section">
+                    <h4>Compatible Configurations</h4>
+                    <div class="version-table-wrapper">
+                      <table class="version-table">
+                        <thead>
+                          <tr>
+                            {version.table.headers.map((header) => (
+                              <th>{header}</th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {version.table.rows.map((row) => (
+                            <tr>
+                              {row.map((cell) => (
+                                <td>{cell}</td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .versioning {
+    padding: 4rem 0;
+  }
+
+  .timeline-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .timeline-item {
+    display: flex;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .timeline-left {
+    flex: 1;
+    padding-right: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+
+  .version-sticky {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+    color: #333;
+  }
+
+  .timeline-center {
+    width: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: var(--accent-primary);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .timeline-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--accent-primary);
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px var(--accent-primary);
+    z-index: 1;
+  }
+
+  .timeline-right {
+    flex: 3;
+    padding-left: 1rem;
+  }
+
+  .version-content {
+    padding: 0 2rem 2rem 2rem;
+  }
+
+  .features-section, .compatibility-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .features-section h4, .compatibility-section h4 {
+    color: var(--accent-primary);
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+  }
+
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .feature-item {
+    margin: 0.5rem 0;
+    padding: 0.75rem 1.5rem 0;
+    border-top: 1px solid #e5e5ea;
+    position: relative;
+    font-size: 0.95rem;
+  }
+
+  .feature-item:last-child {
+    border-bottom: 1px solid #e5e5ea;
+  }
+
+  .feature-item:before {
+    content: "•";
+    position: absolute;
+    left: 0.5rem;
+    color: var(--accent-primary);
+  }
+
+  .version-notes {
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed #e5e5ea;
+  }
+
+  .version-note {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin: 0.5rem 0;
+  }
+
+  .version-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .version-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+  }
+
+  .version-table th,
+  .version-table td {
+    padding: 0.75rem;
+    border: 1px solid #e5e5ea;
+    text-align: left;
+  }
+
+  .version-table th {
+    background: #f5f5f7;
+    color: var(--text-primary);
+  }
+
+  @media (max-width: 768px) {
+    .timeline-item {
+      flex-direction: column;
+    }
+
+    .timeline-left {
+      padding-left: 1rem;
+      justify-content: flex-start;
+      margin-bottom: 1rem;
+      padding-right: 0;
+    }
+
+    .timeline-center {
+      display: none;
+    }
+
+    .timeline-right {
+      padding-left: 0;
+    }
+
+    .version-sticky {
+      transform: rotate(0);
+      margin-left: 0;
+    }
+
+    .version-sticky:hover {
+      transform: translateY(-5px);
+    }
+  }
+</style>

@@ -1,0 +1,25 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import PartnerLogos from "../components/PartnerLogos.astro";
+import HeroSection from "../components/HeroSection.astro";
+import ContentSection from "../components/ContentSection.astro";
+import FeaturesSection from "../components/FeaturesSection.astro";
+import RepositoriesSection from "../components/RepositoriesSection.astro";
+import FaqSection from "../components/FaqSection.astro";
+import content from "../data/caliptra-content.json";
+
+const { sections } = content;
+
+const firstTwoSections = sections.slice(0, 2);
+const lastTwoSections = sections.slice(3);
+---
+
+<MainLayout title={content.meta.title} description={content.meta.description}>
+  <HeroSection />
+  <PartnerLogos />
+  {firstTwoSections.map((section) => <ContentSection section={section} />)}
+  <FeaturesSection />
+  {lastTwoSections.map((section) => <ContentSection section={section} />)}
+  <RepositoriesSection />
+  <FaqSection faq={content.faq} />
+</MainLayout>

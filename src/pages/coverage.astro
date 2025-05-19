@@ -1,0 +1,8 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import CoverageSection from "../components/CoverageSection.astro";
+import content from "../data/caliptra-content.json";
+---
+<MainLayout title={content.meta.title} description={content.meta.description}>
+    <CoverageSection></CoverageSection>
+</MainLayout>

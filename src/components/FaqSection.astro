@@ -1,0 +1,143 @@
+---
+const { faq } = Astro.props;
+---
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">{faq.tag}</span>
+      <h2>{faq.title}</h2>
+      <p class="section-description">{faq.description}</p>
+    </div>
+
+    <div class="faq-container">
+      {
+        faq.questions.map((item, index) => (
+          <details class="faq-item" open={index === 0}>
+            <summary class="faq-question">
+              <span>{item.question}</span>
+              <span class="faq-icon">
+                <span class="icon-plus" />
+                <span class="icon-minus" />
+              </span>
+            </summary>
+            <div class="faq-answer">
+              <p>{item.answer}</p>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+  }
+
+  .faq-question {
+    padding: 1.25rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    color: var(--text-primary);
+    user-select: none;
+    transition: all 0.3s ease;
+  }
+
+  .faq-question:hover {
+    background-color: #ffffff60;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-icon {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+
+  .icon-plus,
+  .icon-minus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition:
+      opacity 0.15s ease,
+      transform 0.3s ease;
+  }
+
+  .icon-plus::before,
+  .icon-plus::after,
+  .icon-minus::before {
+    content: "";
+    position: absolute;
+    background-color: var(--text-primary);
+    border-radius: 1px;
+  }
+
+  .icon-plus::before,
+  .icon-minus::before {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: translateY(-50%);
+  }
+
+  .icon-plus::after {
+    left: 50%;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    transform: translateX(-50%);
+  }
+
+  /* Closed state (show plus) */
+  .faq-item:not([open]) .icon-plus {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+
+  .faq-item:not([open]) .icon-minus {
+    opacity: 0;
+    transform: rotate(-90deg);
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(180deg);
+  }
+
+  .faq-item[open] .icon-plus {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+
+  .faq-item[open] .icon-minus {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+
+  .faq-answer {
+    padding: 0 1.25rem 1.25rem;
+    color: var(--text-secondary);
+  }
+</style>

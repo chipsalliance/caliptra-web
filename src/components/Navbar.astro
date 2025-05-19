@@ -1,0 +1,57 @@
+<header>
+  <nav>
+    <div class="logo">
+      <a href="./">
+        <img src="./caliptra_logo.svg" alt="Caliptra Logo" />
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="./index.html">Overview</a>
+      <a href="./versioning.html">Versions</a>
+      <a href="./coverage.html">Coverage</a>
+      <a href="./news.html">Presentations</a>
+    </div>
+  </nav>
+</header>
+
+<style>
+  header {
+    background: #f2f2f790;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    backdrop-filter: blur(100px);
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 2rem;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    font-size: 0.875rem;
+    text-decoration: none;
+    color: var(--text-secondary);
+  }
+
+  .nav-links a:hover {
+    color: var(--accent-primary);
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+  }
+</style>

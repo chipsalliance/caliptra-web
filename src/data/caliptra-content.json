@@ -1,0 +1,248 @@
+{
+  "meta": {
+    "title": "Caliptra - Building trust, one chip at a time",
+    "description": "Caliptra is a project for implementing a Root of Trust for Measurement (RTM) block inside an SoC."
+  },
+  "hero": {
+    "title": "Caliptra: Building trust, one chip at a time",
+    "description": "Caliptra consists of IP and firmware for an integrated Root of Trust block. It targets datacenter-class SoCs like CPUs, GPUs, DPUs, TPUs. It is the specification, silicon logic, ROM and firmware for implementing a Root of Trust for Measurement (RTM) block inside an SoC."
+  },
+  "partners": [
+    { "name": "AMD", "logo": "./images/partners/amd.svg" },
+    { "name": "CHIPS Alliance", "logo": "./images/partners/chips_alliance.svg" },
+    { "name": "Google", "logo": "./images/partners/google.svg" },
+    { "name": "Linux Foundation", "logo": "./images/partners/linux_foundation.svg" },
+    { "name": "Microsoft", "logo": "./images/partners/microsoft.svg" },
+    { "name": "NVIDIA", "logo": "./images/partners/nvidia.svg" }
+  ],
+  "sections": [
+    {
+      "id": "targeting",
+      "title": "Targeting datacenter-class SoCs",
+      "tag": "Silicon Security",
+      "paragraphs": [
+        "A Root of Trust is a critical security component for datacenter-class SoCs including CPUs, GPUs, DPUs, and TPUs.",
+        "Caliptra provides a secure foundation for these devices."
+      ],
+      "listItems": [
+        { "icon": "Cpu", "text": "CPUs, GPUs, DPUs, and TPUs" },
+        { "icon": "Shield", "text": "Secure foundation for all devices" },
+        { "icon": "Server", "text": "Datacenter-class hardware" }
+      ],
+      "buttons": [
+        { "text": "Explore Root of Trust for SoCs", "url": "/docs/targeting", "primary": true },
+        { "text": "Technical Details", "url": "/docs/specs", "primary": false }
+      ],
+      "image": "./images/home/item.svg",
+      "reverse": false
+    },
+    {
+      "id": "open-vendor-neutral",
+      "title": "Open and vendor-neutral",
+      "tag": "Open Source",
+      "paragraphs": [
+        "Caliptra is an open-source project developed as part of the CHIPS Alliance, ensuring transparency and interoperability. The Caliptra community continues to grow and now includes 9elements, AMI, Antmicro, ASPEED, Axiado, Lubis EDA, ScaleFlux, Marvell and Nuvoton, who together have significant domain expertise across SoC design automation, firmware, and verification."
+      ],
+      "listItems": [
+        { "icon": "Code", "text": "Transparent codebase" },
+        { "icon": "Users", "text": "Large collaborator base" },
+        { "icon": "Network", "text": "Enhanced interoperability" }
+      ],
+      "image": "./images/home/item2.svg",
+      "reverse": true
+    },
+    {
+      "id": "features",
+      "title": "Key Features",
+      "type": "features"
+    },
+    {
+      "id": "from-spec-to-silicon",
+      "title": "From spec to silicon",
+      "tag": "Implementation Flow",
+      "paragraphs": [
+        "Caliptra provides a complete implementation path from specification to silicon, including RTL, firmware, and documentation."
+      ],
+      "image": "./images/home/item3.svg",
+      "reverse": false
+    },
+    {
+      "id": "coverage",
+      "title": "Design verification dashboards",
+      "tag": "Coverage",
+      "paragraphs": [
+        "Test"
+      ],
+      "listItems": [
+        { "icon": "Code", "text": "Caliptra Software Dashboard", "url": "https://chipsalliance.github.io/caliptra-sw/"},
+        { "icon": "Grid2x2Check", "text": "Caliptra CPU DV coverage dashboard", "url":"https://chipsalliance.github.io/Cores-VeeR-EL2/html/main/coverage_dashboard/all/index.html#/" }
+      ],
+      "image": "./images/home/item4.svg",
+      "reverse": true
+    }
+  ],
+  "features": [
+    {
+      "title": "Identity",
+      "description": "Establishes unique cryptographic identity for hardware components via secure boot"
+    },
+    {
+      "title": "Measured Boot",
+      "description": "Records and attests to the exact boot process flow and code execution"
+    },
+    {
+      "title": "Attestation",
+      "description": "Allows the hardware to prove its authenticity and integrity to higher-level software"
+    }
+  ],
+  "repositories": {
+    "title": "Explore the code behind Caliptra",
+    "tag": "Repositories",
+    "description": "The Caliptra code base and documentation are split across multiple repositories:",
+    "items": [
+      {
+        "name": "Primary repository",
+        "url": "https://github.com/chipsalliance/caliptra",
+        "description": "This repository, with admin boilerplate and docs"
+      },
+      {
+        "name": "Adams Bridge RTL",
+        "url": "https://github.com/chipsalliance/adams-bridge",
+        "description": "The primary repository with Adams Bridge Post-Quantum Cryptography hardware accelerator"
+      },
+      {
+        "name": "Caliptra RTL",
+        "url": "https://github.com/chipsalliance/caliptra-rtl",
+        "description": "The primary repository with immutable RTL"
+      },
+      {
+        "name": "Caliptra Software 1.x",
+        "url": "https://github.com/chipsalliance/caliptra-sw",
+        "description": "Caliptra software (ROM, FMC, runtime firmware), and libraries/tools needed to build and test"
+      },
+      {
+        "name": "Caliptra Software 2.x",
+        "url": "https://github.com/chipsalliance/caliptra-sw/tree/main-2.x",
+        "description": "Caliptra software (ROM, FMC, runtime firmware), and libraries/tools needed to build and test",
+        "areas_url": "https://github.com/chipsalliance/caliptra-sw"
+      },
+      {
+        "name": "Caliptra DPE",
+        "url": "https://github.com/chipsalliance/caliptra-dpe",
+        "description": "An implementation of a TCG DICE Protection Environment profile"
+      },
+      {
+        "name": "Caliptra U-Reg",
+        "url": "https://github.com/chipsalliance/caliptra-ureg",
+        "description": "General-purpose libraries and tools for manipulating MMIO registers from Rust"
+      },
+      {
+        "name": "Caliptra Subsystem",
+        "url": "https://github.com/chipsalliance/caliptra-ss",
+        "description": "Caliptra Subsystem including Manufacturer Control Unit (MCU) and peripherals"
+      },
+      {
+        "name": "Caliptra MCU Software",
+        "url": "https://github.com/chipsalliance/caliptra-mcu-sw",
+        "description": "Caliptra MCU Firmware and SDK and specification"
+      }
+    ]
+  },
+  "versioning": {
+    "title": "Caliptra releases",
+    "tag": "Versioning",
+    "description": "Caliptra is released in independently versioned components: RTL, ROM, FMC and Runtime FW. They are all represented by 3 values: major.minor.patch (such as 1.0.2). The first 2 values, major.minor, correspond to a set of features caliptra supports. The patch value is incremented as new releases are made with bug fixes.",
+    "versions": [
+      {
+        "name": "Caliptra 1.0",
+        "content": "Compatible Configurations:",
+        "table": {
+          "headers": ["RTL", "Runtime FMC/FW"],
+          "rows": [["1.0.x", "1.0.x"]]
+        }
+      },
+      {
+        "name": "Caliptra 1.1",
+        "content": "Additional Features\n- ECC HW performance enhancements*\n- LMS HW acceleration*\n- New Runtime commands\n  - LMS_SIGNATURE_VERIFY\n  - ADD_SUBJECT_ALT_NAME\n  - CERTIFY_KEY_EXTENDED\n- Expanded PL0 contexts to 16\n\n* Requires 1.1 RTL\n\nCompatible Configurations:",
+        "table": {
+          "headers": ["RTL", "Runtime FMC/FW"],
+          "rows": [
+            ["1.1.x", "1.1.x"],
+            ["1.0.x", "1.1.x"]
+          ]
+        }
+      },
+      {
+        "name": "Caliptra 1.2",
+        "content": "Additional Features\n- Manifest-based Authorization\n- Deferred retrieval of IDEV CSR**\n- Self-signed FMC Alias CSR\n- DPE export of CDI\n- DPE max cert size increased to 6kB\n\n** Requires 1.2 ROM\n\nCompatible Configurations:",
+        "table": {
+          "headers": ["RTL", "Runtime FMC/FW"],
+          "rows": [
+            ["1.1.x", "1.2.x"],
+            ["1.1.x", "1.2.x"],
+            ["1.0.x", "1.2.x"]
+          ]
+        }
+      },
+      {
+        "name": "Caliptra 2.0",
+        "content": "Additional Features\n- Support ML-DSA Caliptra FW Signature\n- Support OCP Recovery\n- Support Caliptra Sub-System\n- IDevID CSR HMAC Signing\n- Crypto Offload Mailbox Services\n\nCompatible Configurations:",
+        "table": {
+          "headers": ["RTL", "Runtime FMC/FW"],
+          "rows": [
+            ["2.0.x", "2.0.x"]
+          ]
+        }
+      }
+    ]
+  },
+  "coverage": {
+    "title": "Caliptra coverage",
+    "tag": "Coverage",
+    "description": "Collection of coverage dashboards for various Caliptra components",
+    "dashboards": [
+      {
+        "name": "Caliptra Subsystem",
+        "description": "Coverage dashboard for the entire Caliptra Subsystem DV",
+        "link": "https://chipsalliance.github.io/caliptra-cov/#/"
+      },
+      {
+        "name": "VeeR-EL2",
+        "description": "Coverage dashboard for Caliptra's CPU DV",
+        "link": "https://chipsalliance.github.io/Cores-VeeR-EL2/html/main/coverage_dashboard/all/#/"
+      },
+      {
+        "name": "I3C Core",
+        "description": "Coverage dashboard for the I3C Core DV",
+        "link": "https://chipsalliance.github.io/i3c-core/coverview.html#/"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "tag": "FAQs",
+    "description": "Get answers to the most common questions about Caliptra",
+    "questions": [
+      {
+        "question": "What is a Root of Trust?",
+        "answer": "A Root of Trust (RoT) is the foundation of security in a system. It's a hardware component that is inherently trusted and can't be altered. It serves as the starting point for establishing a chain of trust throughout the system, validating each component before it executes."
+      },
+      {
+        "question": "How does Caliptra integrate into an SoC?",
+        "answer": "Caliptra is designed to be integrated as an IP block within an SoC design. It provides RTL that can be incorporated into the silicon design process, along with firmware that runs on the integrated hardware to provide root of trust capabilities."
+      },
+      {
+        "question": "What makes Caliptra different from other Root of Trust solutions?",
+        "answer": "Caliptra is an open-source, vendor-neutral solution developed collaboratively by industry leaders. This approach ensures transparency, interoperability across platforms, and broad industry adoption, unlike proprietary solutions that may be limited to specific vendors or ecosystems."
+      },
+      {
+        "question": "What security features does Caliptra provide?",
+        "answer": "Caliptra provides several key security features including establishing cryptographic identity for hardware components, measured boot capabilities that record the boot process, and hardware attestation that allows the hardware to prove its authenticity and integrity to higher-level software."
+      },
+      {
+        "question": "Can I contribute to the Caliptra project?",
+        "answer": "Yes! Caliptra is an open-source project under the CHIPS Alliance. You can contribute by submitting pull requests, reporting issues, or joining discussions on the project's GitHub repositories."
+      }
+    ]
+  }
+}

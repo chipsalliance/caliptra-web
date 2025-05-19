@@ -1,0 +1,43 @@
+---
+import content from "../data/caliptra-content.json";
+
+const { coverage = content.coverage } = Astro.props;
+---
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">{coverage.tag}</div>
+      <h2>{coverage.title}</h2>
+      <p class="section-description">{coverage.description}</p>
+    </div>
+
+    <div>
+      {
+        coverage.dashboards.map((dashboard, index) => (
+          <div class="coverage-container" style={`animation-delay: ${index * 150}ms`}>
+            <h3 class="coverage-title">
+              <a href={dashboard.link}>{dashboard.name}</a>
+            </h3>
+            <p class="coverage-description">{dashboard.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .coverage-container {
+    margin-top: 2.5rem;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .coverage-title {
+    text-align: center;
+  }
+
+  .coverage-description {
+    text-align: center;
+  }
+</style>

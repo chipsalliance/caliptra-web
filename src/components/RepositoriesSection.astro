@@ -1,0 +1,115 @@
+---
+import { CircleDot, GitPullRequest, LockKeyhole } from "@lucide/astro";
+import content from "../data/caliptra-content.json";
+const { repositories = content.repositories } = Astro.props;
+
+const getAreaIcon = (areaName) => {
+  if (areaName.includes("Issues")) return CircleDot;
+  if (areaName.includes("PRs")) return GitPullRequest;
+  if (areaName.includes("Security")) return LockKeyhole;
+  return null;
+};
+
+const items = repositories.items.map((repo) => {
+  const baseUrl = repo.areas_url ?? repo.url;
+  return {
+    ...repo,
+    areas: [
+      { name: "Issues", url: `${baseUrl}/issues` },
+      { name: "PRs", url: `${baseUrl}/pulls` },
+      { name: "Security advisories", url: `${baseUrl}/security/advisories` },
+    ]
+  };
+});
+
+---
+
+<section class="repositories section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">{repositories.tag}</div>
+      <h2>{repositories.title}</h2>
+      <p class="section-description">{repositories.description}</p>
+    </div>
+    <div class="repo-list">
+      {
+        items.map((repo, index) => (
+          <div class="repo-item" style={`animation-delay: ${index * 100}ms`}>
+            <h3>
+              <a href={repo.url} target="_blank" rel="noopener">
+                {repo.name}
+              </a>
+            </h3>
+            <p class="text-sm">{repo.description}</p>
+            {repo.areas && (
+              <div class="repo-areas">
+                {repo.areas.map((area, i) => {
+                  const AreaIcon = getAreaIcon(area.name);
+                  return (
+                    <>
+                      <a href={area.url} target="_blank" rel="noopener" class="area-link">
+                        {AreaIcon && <AreaIcon size={16} />}
+                        {area.name}
+                      </a>
+                      {i < repo.areas.length - 1 && <span class="area-separator">|</span>}
+                    </>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Repositories */
+  .repo-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .repo-item {
+    padding: 1.5rem;
+    border: 1px solid #e5e5ea;
+    border-radius: 0.5rem;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+  .repo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  }
+  .repo-areas {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .area-link {
+    color: var(--accent-primary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .area-link:hover {
+    text-decoration: underline;
+  }
+  .area-separator {
+    color: var(--text-secondary);
+    user-select: none;
+    opacity: 0.5;
+  }
+
+  @media (max-width: 768px) {
+    .repo-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

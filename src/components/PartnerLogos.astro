@@ -1,0 +1,55 @@
+---
+import content from "../data/caliptra-content.json";
+
+const partners = content.partners;
+---
+
+<section class="partners">
+  <div class="partner-logos">
+    {
+      partners.map((partner) => (
+        <div class="partner-logo">
+          <img src={partner.logo} alt={`${partner.name} logo`} />
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .partners {
+    width: 100%;
+  }
+
+  .partner-logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 0 3rem 0;
+  }
+
+  .partner-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    max-width: 150px;
+    padding: 0.5rem;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+
+  .partner-logo:hover {
+    opacity: 1;
+  }
+
+  .partner-logo img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+</style>

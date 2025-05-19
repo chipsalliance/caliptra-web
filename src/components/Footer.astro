@@ -1,0 +1,179 @@
+---
+import content from "../data/caliptra-content.json";
+
+const currentYear = new Date().getFullYear();
+const repositories = content.repositories.items;
+const footerLinks = [
+  {
+    title: "Project",
+    links: [
+      { text: "About", url: "/" },
+      { text: "News", url: "./news.html" },
+      { text: "Versioning", url: "./versioning.html" },
+      { text: "Coverage", url: "./coverage.html" },
+      { text: "Contributing", url: "https://github.com/chipsalliance/Caliptra/blob/main/CONTRIBUTING.md" },
+    ],
+  },
+  {
+    title: "Repositories",
+    links: repositories.map((repo) => ({
+      text: repo.name,
+      url: repo.url,
+    })),
+  },
+  {
+    title: "Resources",
+    links: [
+      { text: "GitHub Rules", url: "https://github.com/chipsalliance/Caliptra/blob/main/GitHubRules.md" },
+      { text: "Security Policy", url: "https://github.com/chipsalliance/caliptra/security/policy" },
+    ],
+  },
+  {
+    title: "Connect",
+    links: [
+      { text: "GitHub", url: "https://github.com/chipsalliance/Caliptra" },
+      { text: "Mailing list", url: "https://lists.chipsalliance.org/g/caliptra-wg" },
+      { text: "Slack channel", url: "https://join.slack.com/t/caliptraworkspace/signup" },
+      { text: "CHIPS Alliance", url: "https://chipsalliance.org/" },
+      { text: "Report an Issue", url: "https://github.com/chipsalliance/Caliptra/issues" },
+    ],
+  },
+];
+---
+
+<footer class="site-footer">
+  <div class="container footer-container">
+    <div class="footer-brand">
+      <img src="./caliptra_logo.svg" alt="Caliptra Logo" height="32" />
+      <p class="footer-tagline">Building trust, one chip at a time</p>
+    </div>
+
+    <div class="footer-links">
+      {
+        footerLinks.map((category) => (
+          <div class="footer-links-category">
+            <p class="footer-links-heading">{category.title}</p>
+            <ul>
+              {category.links.map((link) => (
+                <li>
+                  <a href={link.url}>{link.text}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; {currentYear} Caliptra - A CHIPS Alliance Project</p>
+      <p>Licensed under <a href="https://github.com/chipsalliance/Caliptra/blob/main/LICENSE">Apache Source License 2.0</a></p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    color: var(--text-primary);
+    border-top: 1px solid var(--medium-gray);
+    padding: 3rem 0 0;
+    margin-top: 4rem;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-brand {
+    flex: 1 1 300px;
+  }
+
+  .footer-tagline {
+    color: var(--text-secondary);
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .footer-links {
+    flex: 2 1 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .footer-links-category {
+    flex: 1 1 150px;
+  }
+
+  .footer-links-heading {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-links-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-links-category li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-links-category a {
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links-category a:hover {
+    color: var(--accent-primary);
+    text-decoration: none;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid var(--medium-gray);
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  .footer-bottom p {
+    color: var(--text-secondary);
+    margin: 0.25rem 0;
+  }
+
+  .footer-bottom a {
+    color: var(--text-secondary);
+    text-decoration: underline;
+  }
+
+  .footer-bottom a:hover {
+    color: var(--accent-primary);
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .footer-links {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .footer-brand {
+      flex: 1 1 100%;
+    }
+  }
+</style>
