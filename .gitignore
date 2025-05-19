@@ -21,3 +21,9 @@ pnpm-debug.log*
 .DS_Store
 
 **/.vscode/
+
+# Python specific
+.venv
+*.egg-info
+__pycache__
+/tools/md2json/build/
