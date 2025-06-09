@@ -1,10 +1,6 @@
 name: GitHub Pages
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
+on: [ push, workflow_dispatch ]
 
 jobs:
   build-and-deploy:
@@ -44,5 +40,5 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' && github.event.repository.visibility == 'public'
         uses: actions/deploy-pages@v4
