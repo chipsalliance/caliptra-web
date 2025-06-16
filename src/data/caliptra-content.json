@@ -68,14 +68,14 @@
     },
     {
       "id": "coverage",
-      "title": "Design verification dashboards",
+      "title": "Test and DV dashboards",
       "tag": "Coverage",
       "paragraphs": [
         "Test"
       ],
       "listItems": [
         { "icon": "Code", "text": "Caliptra Software Dashboard", "url": "https://chipsalliance.github.io/caliptra-sw/"},
-        { "icon": "Grid2x2Check", "text": "Caliptra CPU DV coverage dashboard", "url":"https://chipsalliance.github.io/Cores-VeeR-EL2/html/main/coverage_dashboard/all/index.html#/" }
+        { "icon": "Grid2x2Check", "text": "Caliptra CPU DV coverage dashboard", "url":"./coverage" }
       ],
       "image": "./images/home/item4.svg",
       "reverse": true
