@@ -240,8 +240,8 @@
         "answer": "Caliptra provides several key security features including establishing cryptographic identity for hardware components, measured boot capabilities that record the boot process, and hardware attestation that allows the hardware to prove its authenticity and integrity to higher-level software."
       },
       {
-        "question": "Can I contribute to the Caliptra project?",
-        "answer": "Yes! Caliptra is an open-source project under the CHIPS Alliance. You can contribute by submitting pull requests, reporting issues, or joining discussions on the project's GitHub repositories."
+        "question": "How can I contribute to the Caliptra project?",
+        "answer": "Caliptra is an open-source project under the CHIPS Alliance. You can contribute by submitting pull requests, reporting issues, or joining discussions on the project's GitHub repositories."
       }
     ]
   }
