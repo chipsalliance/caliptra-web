@@ -9,7 +9,7 @@ const formattedDate = new Date(presentation.date).toLocaleDateString('en-US', {
 });
 ---
 
-<div class="presentation-card">
+<a href={presentation.url} target="_blank" rel="noopener noreferrer" class="presentation-card">
   <img src={presentation.image} alt={presentation.title} class="presentation-card-image" />
   <div class="presentation-card-content">
     <div class="presentation-card-meta">
@@ -23,11 +23,11 @@ const formattedDate = new Date(presentation.date).toLocaleDateString('en-US', {
         </div>
       </div>
     <h3 class="presentation-card-title">
-      <a href={presentation.url} target="_blank" rel="noopener noreferrer">{presentation.title}</a>
+      {presentation.title}
     </h3>
     <p class="presentation-card-description">{presentation.description}</p>
   </div>
-</div>
+</a>
 
 <style>
   .presentation-card {
@@ -36,6 +36,9 @@ const formattedDate = new Date(presentation.date).toLocaleDateString('en-US', {
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
   }
 
   .presentation-card:hover {
@@ -60,16 +63,11 @@ const formattedDate = new Date(presentation.date).toLocaleDateString('en-US', {
     font-size: 1.1rem;
     margin-bottom: 0.75rem;
     line-height: 1.4;
-  }
-
-  .presentation-card-title a {
     color: var(--text-primary);
-    text-decoration: none;
   }
 
-  .presentation-card-title a:hover {
+  .presentation-card:hover .presentation-card-title {
     color: var(--accent-primary);
-    text-decoration: none;
   }
 
   .presentation-card-description {
