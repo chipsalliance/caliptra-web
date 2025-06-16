@@ -8,73 +8,73 @@
       "id": "subsystem-firmware-stack",
       "title": "Caliptra - Subsystem Firmware Stack",
       "image": "./images/news/subsystem-firmware.png",
-      "date": "2025-03-03",
-      "conference": "OCP Summit",
+      "date": "2025-05-07",
+      "conference": "OCP EMEA Summit",
       "description": "The Caliptra Subsystem Firmware is co-produced as a reference software development kit (SDK) with a consistent foundation for building a quantum-resilient and standards-compliant Root of Trust (RoT) for SoC implementers.",
-      "url": "https://www.opencompute.org/documents/caliptra-subsystem-firmware-stack-ocp-summit-2023-pdf"
+      "url": "https://www.youtube.com/watch?v=VN5hY3OK4oI&t=1s&pp=ygUIQ2FsaXB0cmE%3D"
     },
     {
       "id": "storage-security",
       "title": "Storage Security Caliptra and LOCK",
       "image": "./images/news/storage-security.png",
-      "date": "2024-11-17",
-      "conference": "OCP Summit",
+      "date": "2024-10-23",
+      "conference": "OCP Global Summit",
       "description": "Caliptra is an open-source trusted root of trust. We present a new feature set extension for Caliptra called LOCK which is designed to provide a strong baseline for key management security in storage devices.",
-      "url": "https://www.opencompute.org/documents/storage-security-caliptra-and-lock-ocp-summit-2023-pdf"
+      "url": "https://www.youtube.com/watch?v=1QFCnT7vXHM&t=6s&pp=ygUIQ2FsaXB0cmE%3D"
     },
     {
       "id": "caliptra-journey",
       "title": "Caliptra Journey: What are we doing next?",
       "image": "./images/news/caliptra-journey.png",
-      "date": "2024-11-14",
-      "conference": "OCP Summit",
+      "date": "2024-10-23",
+      "conference": "OCP Global Summit",
       "description": "Learn about the tremendous progress Project Caliptra has made over the past six months after contributing Caliptra 1.0 specification to OCP and associated collateral hosted at CHIPS Alliance.",
-      "url": "https://www.opencompute.org/documents/caliptra-journey-what-are-we-doing-next-ocp-summit-2023-pdf"
+      "url": "https://www.youtube.com/watch?v=MtHIl5LjlvI&pp=ygUIQ2FsaXB0cmE%3D"
     },
     {
       "id": "unified-test-cases",
       "title": "Caliptra's Unified Test Cases: Validating firmware against multiple hardware models",
       "image": "./images/news/unified-test.png",
-      "date": "2024-04-18",
-      "conference": "ORConf 2024",
+      "date": "2023-11-02",
+      "conference": "OCP Global Summit",
       "description": "Testing Firmware for silicon in before the RTL is ready can be challenging. Writing a full system simulator can help, but how do you know if the simulator matches the RTL correctly?",
-      "url": "https://dvcon.org/events/archives/united-states-2023"
+      "url": "https://www.youtube.com/watch?v=89qKNuU_zJg&t=2s&pp=ygUIQ2FsaXB0cmHSBwkJ3gkBhyohjO8%3D"
     },
     {
       "id": "firmware-stack",
       "title": "Caliptra Firmware Stack",
       "image": "./images/news/firmware-stack.png",
-      "date": "2024-11-03",
-      "conference": "OCP Summit",
+      "date": "2023-11-02",
+      "conference": "OCP Global Summit",
       "description": "We will explore the Caliptra Firmware Stack covering the ROM, First Mutable Code and Runtime. We'll also explore the verification methodology used to demonstrate and measure security and functionality.",
-      "url": "https://www.opencompute.org/documents/caliptra-firmware-stack-ocp-summit-2023-pdf"
+      "url": "https://www.youtube.com/watch?v=XKbqgBXlkb8&t=6s&pp=ygUIQ2FsaXB0cmHSBwkJ3gkBhyohjO8%3D"
     },
     {
       "id": "update-closing-1",
       "title": "Caliptra Update: Closing in on 1.0",
       "image": "./images/news/update-closing.png",
-      "date": "2024-01-27",
-      "conference": "OCP Summit",
+      "date": "2023-11-02",
+      "conference": "OCP Global Summit",
       "description": "Learn about the tremendous progress Project Caliptra has made over the last year as we close in on the 1.0 specification and associated collateral hosted at CHIPS Alliance including firmware and RTL source code.",
-      "url": "https://www.opencompute.org/documents/caliptra-update-closing-in-on-1-0-ocp-summit-2023-pdf"
+      "url": "https://www.youtube.com/watch?v=p8whxlUnIrk&pp=ygUMQ2FsaXB0cmEgMS4w"
     },
     {
       "id": "building-open-source",
-      "title": "Caliptra: Building Open Source Security IP with Open Source Tools (Michael Gielda)",
+      "title": "Caliptra: Building Open Source Security IP with Open Source Tools",
       "image": "./images/news/building-open-source.png",
-      "date": "2024-03-28",
+      "date": "2024-09-16",
       "conference": "ORConf 2024",
       "description": "A deep dive into how open source tools are being used to create the Caliptra security IP, focusing on collaborative development practices and verification methodologies.",
-      "url": "https://orconf.org/"
+      "url": "https://www.youtube.com/watch?v=DFCWthwXzbk&pp=ygVBQ2FsaXB0cmE6IEJ1aWxkaW5nIE9wZW4gU291cmNlIFNlY3VyaXR5IElQIHdpdGggT3BlbiBTb3VyY2UgVG9vbHM%3D"
     },
     {
       "id": "open-source-tools",
       "title": "New open source IP, tools and verification flows for Caliptra 2.0",
       "image": "./images/news/open-source-tools.png",
-      "date": "2024-05-08",
+      "date": "2024-09-13",
       "conference": "ORConf 2024",
       "description": "The talk will cover recent open source developments resulting from firmware involvement in the project, especially on the hardware and verification side of open source root of trust for use in future Caliptra integrations.",
-      "url": "https://orconf.org/"
+      "url": "https://www.youtube.com/watch?v=hXjUoCGlXyM&t=5s&pp=ygVBTmV3IG9wZW4gc291cmNlIElQLCB0b29scyBhbmQgdmVyaWZpY2F0aW9uIGZsb3dzIGZvciBDYWxpcHRyYSAyLjA%3D"
     }
   ]
 }
