@@ -1,0 +1,490 @@
+---
+import { FileText, Search, BookMarked } from "@lucide/astro";
+import docsData from "../data/caliptra-docs.json";
+
+// Group documents by category
+const categories = [...new Set(docsData.map(doc => doc.category))];
+const documentsByCategory = categories.reduce((acc, category) => {
+  acc[category] = docsData.filter(doc => doc.category === category);
+  return acc;
+}, {});
+---
+
+<section class="docs section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Documentation</div>
+      <h2>Caliptra Documentation</h2>
+      <p class="section-description">Comprehensive documentation covering all aspects of Caliptra - from hardware specifications to software guides and integration instructions.</p>
+    </div>
+
+    <div class="docs-container">
+      <!-- Search Bar -->
+      <div class="search-container">
+        <div class="search-input-wrapper">
+          <Search size={18} />
+          <input
+            type="text"
+            placeholder="Search documentation..."
+            class="search-input"
+            id="docs-search"
+          />
+        </div>
+        <div class="search-results-count" id="search-results-count" style="display: none;"></div>
+      </div>
+
+      <div class="tab-nav">
+        {categories.map((category, index) => (
+          <button
+            class={`tab-button ${index === 0 ? 'active' : ''}`}
+            data-tab={category.toLowerCase().replace(/\s+/g, '-')}
+          >
+            {category}
+            <span class="tab-count">({documentsByCategory[category].length})</span>
+          </button>
+        ))}
+      </div>
+
+      <div class="tab-content">
+        {categories.map((category, categoryIndex) => (
+          <div
+            class={`tab-panel ${categoryIndex === 0 ? 'active' : ''}`}
+            data-panel={category.toLowerCase().replace(/\s+/g, '-')}
+          >
+            <div class="docs-grid">
+              {documentsByCategory[category].map((doc, index) => (
+                <a href="#" class="doc-item" style={`animation-delay: ${index * 50}ms`} data-search-terms={`${doc.document.toLowerCase()} ${doc.summary.toLowerCase()} ${doc.category.toLowerCase()}`}>
+                  <div class="doc-header">
+                    <div class="doc-icon">
+                      <FileText size={20} />
+                    </div>
+                    <h3 class="doc-title">{doc.document}</h3>
+                  </div>
+                  <p class="doc-summary">{doc.summary}</p>
+                  <div class="doc-actions">
+                    <span class="doc-category-badge">{doc.category}</span>
+                    {doc.repo && <span class="doc-category-badge"><BookMarked size="14" /> {doc.repo}</span>}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Search Results -->
+      <div class="search-results" id="search-results" style="display: none;">
+        {docsData.map((doc, index) => (
+          <div class="search-item"
+               data-category={doc.category}
+               data-search-terms={`${doc.document.toLowerCase()} ${doc.summary.toLowerCase()} ${doc.category.toLowerCase()}`}
+               style={`animation-delay: ${index * 25}ms`}>
+            <h3 class="search-category-header" data-category-name={doc.category} style="display: none;">{doc.category}</h3>
+            <a href="#" class="doc-item">
+              <div class="doc-header">
+                <div class="doc-icon">
+                  <FileText size={20} />
+                </div>
+                <h3 class="doc-title">{doc.document}</h3>
+              </div>
+              <p class="doc-summary">{doc.summary}</p>
+              <div class="doc-actions">
+                <span class="doc-category-badge">{doc.category}</span>
+                {doc.repo && <span class="doc-category-badge">{doc.repo}</span>}
+              </div>
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <!-- No results message -->
+      <div class="no-results" id="no-results" style="display: none;">
+        <div class="no-results-content">
+          <Search size={48} />
+          <h3>No documents found</h3>
+          <p>Try adjusting your search terms.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .docs {
+    padding: 4rem 0;
+  }
+
+  .docs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Search Styles */
+  .search-container {
+    margin-bottom: 2rem;
+  }
+
+  .search-input-wrapper {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .search-input-wrapper svg {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    pointer-events: none;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 3rem;
+    border: 1px solid #d4d8e0;
+    border-radius: var(--border-radius);
+    font-size: 0.875rem;
+    background: white;
+    transition: all 0.2s ease;
+  }
+
+  .search-input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(0, 88, 126, 0.1);
+  }
+
+  .search-results-count {
+    text-align: center;
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+
+  .tab-nav {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #d4d8e0;
+    overflow-x: auto;
+    padding-bottom: 0;
+  }
+
+  .tab-button {
+    background: none;
+    border: none;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .tab-button:hover {
+    color: var(--accent-primary);
+    background-color: #f5f5f7;
+  }
+
+  .tab-button.active {
+    color: var(--accent-primary);
+    border-bottom-color: var(--accent-primary);
+  }
+
+  .tab-count {
+    font-size: 0.75rem;
+    background: #f3f4f6;
+    color: var(--text-secondary);
+    padding: 0.125rem 0.375rem;
+    border-radius: 100px;
+    font-weight: 400;
+    transition: all 0.2s ease;
+  }
+
+  .tab-button.active .tab-count {
+    background: var(--accent-primary);
+    color: white;
+  }
+
+  .tab-content {
+    position: relative;
+  }
+
+  .tab-panel {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+  }
+
+  .tab-panel.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .docs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 0.875rem;
+  }
+
+  .doc-item {
+    background: #FFFFFF60;
+    border: 1px solid #d4d8e0;
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 0.4s ease forwards;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    height: 100%;
+  }
+
+  .doc-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border-color: var(--accent-primary);
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .doc-item.hidden {
+    display: none !important;
+  }
+
+  .doc-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .doc-icon {
+    background: #f5f5f7;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-primary);
+    flex-shrink: 0;
+  }
+
+  .doc-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.4;
+    color: var(--text-primary);
+  }
+
+  .doc-summary {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex-grow: 1;
+  }
+
+  .doc-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: auto;
+    gap: 0.5rem;
+  }
+
+  .doc-category-badge {
+    font-size: 0.75rem;
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    background: #00587e15;
+    color: var(--accent-primary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 100px;
+    font-weight: 500;
+  }
+
+  /* No Results Styles */
+  .no-results {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-secondary);
+  }
+
+  .no-results-content svg {
+    opacity: 0.3;
+    margin-bottom: 1rem;
+  }
+
+  .no-results h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+  }
+
+  /* Search Results */
+  .search-results {
+    margin-top: 2rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .search-category {
+    margin-bottom: 3rem;
+  }
+
+  .search-category:empty {
+    display: none;
+  }
+
+  .search-category-header {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--accent-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .search-category-count {
+    font-size: 0.75rem;
+    background: var(--accent-primary);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 100px;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .docs-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .tab-nav {
+      gap: 0.25rem;
+    }
+
+    .tab-button {
+      padding: 0.75rem 1rem;
+      font-size: 0.8rem;
+    }
+
+    .doc-header {
+      gap: 0.5rem;
+    }
+
+    .doc-icon {
+      width: 36px;
+      height: 36px;
+    }
+
+    .search-input-wrapper {
+      max-width: 100%;
+    }
+  }
+</style>
+
+<script>
+  const els = {
+    search: document.getElementById('docs-search'),
+    count: document.getElementById('search-results-count'),
+    noResults: document.getElementById('no-results'),
+    tabNav: document.querySelector('.tab-nav'),
+    tabContent: document.querySelector('.tab-content'),
+    searchResults: document.getElementById('search-results')
+  };
+
+  // Tabs
+  document.querySelectorAll('.tab-button').forEach(btn => {
+    (btn as HTMLButtonElement).onclick = () => {
+      document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      const panel = document.querySelector(`[data-panel="${(btn as HTMLElement).dataset.tab}"]`);
+      if (panel) panel.classList.add('active');
+    };
+  });
+
+  // Search
+  els.search?.addEventListener('input', e => {
+    const target = e.target as HTMLInputElement;
+    if (!target) return;
+
+    const term = target.value.toLowerCase().trim();
+    const items = document.querySelectorAll('.search-item');
+
+    if (!term) {
+      if (els.tabNav) (els.tabNav as HTMLElement).style.display = 'flex';
+      if (els.tabContent) (els.tabContent as HTMLElement).style.display = 'block';
+      if (els.searchResults) (els.searchResults as HTMLElement).style.display = 'none';
+      if (els.count) (els.count as HTMLElement).style.display = 'none';
+      if (els.noResults) (els.noResults as HTMLElement).style.display = 'none';
+      return;
+    }
+
+    if (els.tabNav) (els.tabNav as HTMLElement).style.display = 'none';
+    if (els.tabContent) (els.tabContent as HTMLElement).style.display = 'none';
+    if (els.searchResults) (els.searchResults as HTMLElement).style.display = 'flex';
+
+    let visible = 0, lastCategory = '', categoryCount = 0;
+
+    items.forEach(item => {
+      const match = (item as HTMLElement).dataset.searchTerms?.includes(term);
+      const category = (item as HTMLElement).dataset.category;
+      const header = item.querySelector('.search-category-header');
+
+      (item as HTMLElement).style.display = match ? 'block' : 'none';
+
+      if (match && category !== lastCategory) {
+        // Count items in this category
+        categoryCount = 0;
+        items.forEach(countItem => {
+          if ((countItem as HTMLElement).dataset.category === category &&
+              (countItem as HTMLElement).dataset.searchTerms?.includes(term)) {
+            categoryCount++;
+          }
+        });
+
+        if (header) {
+          (header as HTMLElement).style.display = 'block';
+          header.innerHTML = `${category} <span class="search-category-count">(${categoryCount})</span>`;
+        }
+        lastCategory = category || '';
+      } else if (header) {
+        (header as HTMLElement).style.display = 'none';
+      }
+
+      if (match) {
+        visible++;
+      }
+    });
+
+    if (els.count) {
+      els.count.textContent = `${visible} document${visible !== 1 ? 's' : ''} found`;
+      (els.count as HTMLElement).style.display = 'block';
+    }
+    if (els.noResults) {
+      (els.noResults as HTMLElement).style.display = visible ? 'none' : 'block';
+    }
+  });
+</script>

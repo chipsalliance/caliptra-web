@@ -249,3 +249,26 @@ img {
     padding: 0 1rem;
   }
 }
+
+  /* Custom Scrollbar */
+  .tab-nav::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .tab-nav::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .tab-nav::-webkit-scrollbar-thumb {
+    background: #d4d8e0;
+    border-radius: 2px;
+  }
+
+  .tab-nav::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-primary);
+  }
+  
+  .tab-nav {
+    scrollbar-width: thin;
+    scrollbar-color: #d4d8e0 transparent;
+  }
