@@ -8,10 +8,10 @@
     "description": "Caliptra consists of IP and firmware for an integrated Root of Trust block. It targets datacenter-class SoCs like CPUs, GPUs, DPUs, TPUs. It is the specification, silicon logic, ROM and firmware for implementing a Root of Trust for Measurement (RTM) block inside an SoC."
   },
   "partners": [
-    { "name": "AMD", "logo": "./images/partners/amd.svg" },
-    { "name": "CHIPS Alliance", "logo": "./images/partners/chips_alliance.svg" },
-    { "name": "Google", "logo": "./images/partners/google.svg" },
     { "name": "Linux Foundation", "logo": "./images/partners/linux_foundation.svg" },
+    { "name": "CHIPS Alliance", "logo": "./images/partners/chips_alliance.svg" },
+    { "name": "AMD", "logo": "./images/partners/amd.svg" },
+    { "name": "Google", "logo": "./images/partners/google.svg" },
     { "name": "Microsoft", "logo": "./images/partners/microsoft.svg" },
     { "name": "NVIDIA", "logo": "./images/partners/nvidia.svg" }
   ],
