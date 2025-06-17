@@ -1,6 +1,6 @@
 ---
-import content from "../data/caliptra-content.json";
-const { versioning = content.versioning } = Astro.props;
+import versions from "../data/caliptra-versions.json";
+const { versioning = versions } = Astro.props;
 ---
 
 <section class="versioning section">
@@ -58,7 +58,7 @@ const { versioning = content.versioning } = Astro.props;
                       <table class="version-table">
                         <thead>
                           <tr>
-                            {version.table.headers.map((header) => (
+                            {version.table.header.map((header) => (
                               <th>{header}</th>
                             ))}
                           </tr>

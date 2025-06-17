@@ -1,7 +1,7 @@
 ---
 import { CircleDot, GitPullRequest, LockKeyhole } from "@lucide/astro";
-import content from "../data/caliptra-content.json";
-const { repositories = content.repositories } = Astro.props;
+import content from "../data/caliptra-repositories.json";
+const { repositories = content } = Astro.props;
 
 const getAreaIcon = (areaName) => {
   if (areaName.includes("Issues")) return CircleDot;

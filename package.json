@@ -3,8 +3,8 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
+    "dev": "./fetch_content.sh --no-fetch-descriptions && astro dev",
+    "build": "./fetch_content.sh --fetch-descriptions && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },

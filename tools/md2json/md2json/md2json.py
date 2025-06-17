@@ -6,6 +6,7 @@ import mistletoe
 import mistletoe.block_token as tokens
 import mistletoe.markdown_renderer as markdown
 import re
+import requests
 import sys
 
 from .containers import Section, Table
@@ -66,7 +67,7 @@ def generate_versioning(top: Section) -> str:
     }, indent=2)
 
 
-def generate_repositories(top: Section) -> str:
+def generate_repositories(top: Section, fetch_descriptions: bool) -> str:
     def handle_entry(entry: list[str]) -> dict:
         entry_match = LINK_REGEX.match(entry[0])
         result = {
@@ -80,6 +81,13 @@ def generate_repositories(top: Section) -> str:
         tree_index = result['url'].rfind("/tree/")
         if tree_index > 0:
             result['areas_url'] = result['url'][:tree_index]
+
+        if fetch_descriptions:
+            api_name: str = (result['areas_url'] if 'areas_url' in result else result['url']).removeprefix('https://github.com/')
+            response = requests.get(f'https://api.github.com/repos/{api_name}').json()
+            # Use the repository description from GitHub if available
+            if response['description'] is not None:
+                result['description'] = response['description']
 
         return result
 
@@ -99,6 +107,8 @@ def main():
                         help='Output JSON file')
     parser.add_argument('--section', type=str, choices=['versioning', 'repositories'],
                         help='Data to extract')
+    parser.add_argument('--fetch-descriptions', action=argparse.BooleanOptionalAction, default=False,
+                        help='Should repository descriptions be fetched using the GitHub API')
     parser.add_argument('input',
                         help='Input Markdown file')
 
@@ -107,7 +117,7 @@ def main():
     if args.section == 'versioning':
         result = generate_versioning(top)
     elif args.section == 'repositories':
-        result = generate_repositories(top)
+        result = generate_repositories(top, args.fetch_descriptions)
     else:
         print(f'Unsupported --section argument: {args.section}', file=sys.stderr)
         sys.exit(1)

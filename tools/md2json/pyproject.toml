@@ -6,6 +6,7 @@ authors= [
 ]
 dependencies = [
   "mistletoe>=1",
+  "requests>=2",
 ]
 
 [project.scripts]
