@@ -2,12 +2,43 @@
 import { FileText, Search, BookMarked } from "@lucide/astro";
 import docsData from "../data/caliptra-docs.json";
 
+interface Document {
+  category: string;
+  document: string;
+  summary: string;
+  repo: string;
+  href: string;
+};
+
+const documents = docsData.documents.map((doc) => {
+  let href = doc.href;
+  if (href == null && doc.repo != null) {
+    const repoData = docsData.repositories[doc.repo];
+    if (repoData.pattern != null) {
+      href = repoData.pattern.replace("{ref}", repoData.ref).replace("{doc}", doc.doc)
+    }
+  }
+
+  return {
+    category: doc.category,
+    document: doc.name,
+    summary: doc.summary,
+    repo: doc.repo,
+    href: href,
+  } as Document;
+});
+
 // Group documents by category
-const categories = [...new Set(docsData.map(doc => doc.category))];
+const categories = [...new Set(documents.map(doc => doc.category))];
 const documentsByCategory = categories.reduce((acc, category) => {
-  acc[category] = docsData.filter(doc => doc.category === category);
+  acc[category] = documents.filter(doc => doc.category === category);
   return acc;
-}, {});
+}, {}) as {[category: string]: Document[]};
+
+const createSearchTerm = (doc: Document): string =>
+  `${doc.document.toLowerCase()} ${doc.summary.toLowerCase()} ${doc.category.toLowerCase()}`;
+
+
 ---
 
 <section class="docs section">
@@ -53,7 +84,7 @@ const documentsByCategory = categories.reduce((acc, category) => {
           >
             <div class="docs-grid">
               {documentsByCategory[category].map((doc, index) => (
-                <a href="#" class="doc-item" style={`animation-delay: ${index * 50}ms`} data-search-terms={`${doc.document.toLowerCase()} ${doc.summary.toLowerCase()} ${doc.category.toLowerCase()}`}>
+                <a href={doc.href} class="doc-item" style={`animation-delay: ${index * 50}ms`} data-search-terms={createSearchTerm(doc)}>
                   <div class="doc-header">
                     <div class="doc-icon">
                       <FileText size={20} />
@@ -74,13 +105,13 @@ const documentsByCategory = categories.reduce((acc, category) => {
 
       <!-- Search Results -->
       <div class="search-results" id="search-results" style="display: none;">
-        {docsData.map((doc, index) => (
+        {documents.map((doc, index) => (
           <div class="search-item"
                data-category={doc.category}
-               data-search-terms={`${doc.document.toLowerCase()} ${doc.summary.toLowerCase()} ${doc.category.toLowerCase()}`}
+               data-search-terms={createSearchTerm(doc)}
                style={`animation-delay: ${index * 25}ms`}>
             <h3 class="search-category-header" data-category-name={doc.category} style="display: none;">{doc.category}</h3>
-            <a href="#" class="doc-item">
+            <a href={doc.href} class="doc-item">
               <div class="doc-header">
                 <div class="doc-icon">
                   <FileText size={20} />
