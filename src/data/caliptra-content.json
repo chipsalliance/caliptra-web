@@ -98,21 +98,21 @@
   "coverage": {
     "title": "Caliptra coverage",
     "tag": "Coverage",
-    "description": "Collection of coverage dashboards for various Caliptra components",
+    "description": "Collection of latest coverage dashboards for Caliptra components",
     "dashboards": [
       {
         "name": "Caliptra Subsystem",
-        "description": "Coverage dashboard for the entire Caliptra Subsystem DV",
+        "description": "Latest coverage dashboard for Caliptra Subsystem DV",
         "link": "https://chipsalliance.github.io/caliptra-cov/#/"
       },
       {
         "name": "VeeR-EL2",
-        "description": "Coverage dashboard for Caliptra's CPU DV",
+        "description": "Latest coverage dashboard for Caliptra's CPU DV",
         "link": "https://chipsalliance.github.io/Cores-VeeR-EL2/html/main/coverage_dashboard/all/#/"
       },
       {
         "name": "I3C Core",
-        "description": "Coverage dashboard for the I3C Core DV",
+        "description": "Latest coverage dashboard for the I3C Core DV",
         "link": "https://chipsalliance.github.io/i3c-core/coverview.html#/"
       }
     ]
