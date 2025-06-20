@@ -30,8 +30,8 @@
         { "icon": "Server", "text": "Datacenter-class hardware" }
       ],
       "buttons": [
-        { "text": "Explore Root of Trust for SoCs", "url": "/docs/targeting", "primary": true },
-        { "text": "Technical Details", "url": "/docs/specs", "primary": false }
+        { "text": "Explore Root of Trust for SoCs", "url": "./docs/targeting", "primary": true },
+        { "text": "Technical Details", "url": "./docs/specs", "primary": false }
       ],
       "image": "./images/home/item.svg",
       "reverse": false
