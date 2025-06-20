@@ -30,13 +30,21 @@ const documents = docsData.documents.map((doc) => {
 
 // Group documents by category
 const categories = [...new Set(documents.map(doc => doc.category))];
-const documentsByCategory = categories.reduce((acc, category) => {
-  acc[category] = documents.filter(doc => doc.category === category);
-  return acc;
-}, {}) as {[category: string]: Document[]};
+const repositories = Object.keys(docsData.repositories);
+
+const groupedDocs: {[category: string]: {[repo: string]: Document[]}} = Object.create(null);
+for (const category of categories) {
+  groupedDocs[category] = Object.create(null);
+  for (const repository of repositories) {
+    const result = documents.filter(doc => doc.category === category && doc.repo === repository);
+    if (result.length > 0) {
+      groupedDocs[category][repository] = result;
+    }
+  }
+}
 
 const createSearchTerm = (doc: Document): string =>
-  `${doc.document.toLowerCase()} ${doc.summary.toLowerCase()} ${doc.category.toLowerCase()}`;
+  `${doc.document.toLowerCase()} ${doc.summary.toLowerCase()} ${doc.category.toLowerCase()} ${doc.repo.toLowerCase()}`;
 
 
 ---
@@ -71,7 +79,7 @@ const createSearchTerm = (doc: Document): string =>
             data-tab={category.toLowerCase().replace(/\s+/g, '-')}
           >
             {category}
-            <span class="tab-count">({documentsByCategory[category].length})</span>
+            <span class="tab-count">({Object.values(groupedDocs[category]).reduce((acc, cat) => acc + cat.length, 0)})</span>
           </button>
         ))}
       </div>
@@ -82,23 +90,26 @@ const createSearchTerm = (doc: Document): string =>
             class={`tab-panel ${categoryIndex === 0 ? 'active' : ''}`}
             data-panel={category.toLowerCase().replace(/\s+/g, '-')}
           >
-            <div class="docs-grid">
-              {documentsByCategory[category].map((doc, index) => (
-                <a href={doc.href} class="doc-item" style={`animation-delay: ${index * 50}ms`} data-search-terms={createSearchTerm(doc)}>
-                  <div class="doc-header">
-                    <div class="doc-icon">
-                      <FileText size={20} />
+            {Object.entries(groupedDocs[category]).map(([repo, docs]) => (
+              <h3 class="docs-repo-title">{repo}</h3>
+              <div class="docs-grid">
+                {docs.map((doc, index) => (
+                  <a href={doc.href} class="doc-item" style={`animation-delay: ${index * 50}ms`} data-search-terms={createSearchTerm(doc)}>
+                    <div class="doc-header">
+                      <div class="doc-icon">
+                        <FileText size={20} />
+                      </div>
+                      <h3 class="doc-title">{doc.document}</h3>
                     </div>
-                    <h3 class="doc-title">{doc.document}</h3>
-                  </div>
-                  <p class="doc-summary">{doc.summary}</p>
-                  <div class="doc-actions">
-                    <span class="doc-category-badge">{doc.category}</span>
-                    {doc.repo && <span class="doc-category-badge"><BookMarked size="14" /> {doc.repo}</span>}
-                  </div>
-                </a>
-              ))}
-            </div>
+                    <p class="doc-summary">{doc.summary}</p>
+                    <div class="doc-actions">
+                      <span class="doc-category-badge">{doc.category}</span>
+                      {doc.repo && <span class="doc-category-badge"><BookMarked size="14" /> {doc.repo}</span>}
+                    </div>
+                  </a>
+                ))}
+              </div>
+            ))}
           </div>
         ))}
       </div>
@@ -148,6 +159,21 @@ const createSearchTerm = (doc: Document): string =>
   .docs-container {
     max-width: 1200px;
     margin: 0 auto;
+  }
+
+  .docs-repo-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--accent-primary);
+    animation: fadeInUp 0.4s ease forwards;
+  }
+
+  .docs-repo-title:not(:first-child) {
+    padding-top: 2.5rem;
   }
 
   /* Search Styles */
