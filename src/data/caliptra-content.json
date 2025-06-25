@@ -101,9 +101,19 @@
     "description": "Collection of latest coverage dashboards for Caliptra components",
     "dashboards": [
       {
+        "name": "Caliptra Subsystem coverage summary",
+        "description": "Summary and a detailed overview of caliptra-ss coverage",
+        "link": "https://github.com/chipsalliance/caliptra-ss/blob/677fa3489b1e74f3d0817d4aae6eaee056ec90d8/docs/CaliptraSSCoverage.md"
+      },
+      {
         "name": "Caliptra Subsystem",
         "description": "Latest coverage dashboard for Caliptra Subsystem DV",
-        "link": "https://chipsalliance.github.io/caliptra-cov/#/"
+        "link": "https://chipsalliance.github.io/caliptra-cov/?path=2025-06-24-caliptra-ss.zip"
+      },
+      {
+        "name": "Caliptra RTL",
+        "description": "Latest coverage for Caliptra RTL DV",
+        "link": "https://chipsalliance.github.io/caliptra-cov/?path=2025-06-24-caliptra-rtl.zip"
       },
       {
         "name": "VeeR-EL2",
