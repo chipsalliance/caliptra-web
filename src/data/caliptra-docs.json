@@ -68,8 +68,15 @@
     },
     {
       "category": "Hardware",
-      "name": "Bus Specification",
-      "summary": "Top level bus specification (TileLink-UL compliant)",
+      "name": "Caliptra Subsystem Hardware Specification",
+      "summary": "",
+      "repo": "Caliptra Subsystem",
+      "doc": "docs/CaliptraSSHardwareSpecification.md"
+    },
+    {
+      "category": "Hardware",
+      "name": "TileLink-UL Bus Specification",
+      "summary": "Bus specification for comportable devices",
       "repo": "Caliptra Subsystem",
       "doc": "src/tlul/README.md"
     },
@@ -82,21 +89,21 @@
     },
     {
       "category": "Hardware",
-      "name": "TLUL XBAR DV Document",
+      "name": "TileLink-UL XBAR DV",
       "summary": "TileLink-UL bus testing overview",
       "repo": "Caliptra Subsystem",
       "doc": "src/tlul/doc/dv/README.md"
     },
     {
       "category": "Hardware",
-      "name": "PWRMGR Theory of Operation",
+      "name": "Power Manager Theory of Operation",
       "summary": "Overview of Power Manager's functionality",
       "repo": "Caliptra Subsystem",
       "doc": "src/pwrmgr/doc/theory_of_operation.md"
     },
     {
       "category": "Hardware",
-      "name": "PWRMGR Programmer's Guide",
+      "name": "Power Manager Programmer's Guide",
       "summary": "",
       "repo": "Caliptra Subsystem",
       "doc": "src/pwrmgr/doc/programmers_guide.md"
@@ -152,10 +159,10 @@
     },
     {
       "category": "Hardware",
-      "name": "Caliptra Subsystem Hardware Specification",
+      "name": "Caliptra Hardware Specification",
       "summary": "",
-      "repo": "Caliptra Subsystem",
-      "doc": "docs/CaliptraSSHardwareSpecification.md"
+      "repo": "Caliptra RTL",
+      "doc": "docs/CaliptraHardwareSpecification.md"
     },
     {
       "category": "Hardware",
@@ -173,6 +180,13 @@
     },
     {
       "category": "Hardware",
+      "name": "Internal Registers for caliptra-rtl",
+      "summary": "Latest register description for caliptra-rtl components",
+      "repo": "Caliptra RTL",
+      "href": "https://chipsalliance.github.io/caliptra-rtl/main/internal-regs/?p="
+    },
+    {
+      "category": "Hardware",
       "name": "FV ECC Block Overview",
       "summary": "",
       "repo": "Caliptra RTL",
@@ -187,24 +201,10 @@
     },
     {
       "category": "Hardware",
-      "name": "Caliptra Hardware Specification",
-      "summary": "",
-      "repo": "Caliptra RTL",
-      "doc": "docs/CaliptraHardwareSpecification.md"
-    },
-    {
-      "category": "Hardware",
-      "name": "UART DV Document",
+      "name": "UART DV",
       "summary": "UART testing overview",
       "repo": "Caliptra RTL",
       "doc": "src/uart/doc/dv/index.md"
-    },
-    {
-      "category": "Hardware",
-      "name": "SHA512",
-      "summary": "SHA512 testing overview",
-      "repo": "Caliptra RTL",
-      "doc": "src/sha512/formal/readme.md"
     },
     {
       "category": "Hardware",
@@ -219,6 +219,13 @@
       "summary": "SHA256 testing overview",
       "repo": "Caliptra RTL",
       "doc": "src/sha256/formal/readme.md"
+    },
+    {
+      "category": "Hardware",
+      "name": "SHA512",
+      "summary": "SHA512 testing overview",
+      "repo": "Caliptra RTL",
+      "doc": "src/sha512/formal/readme.md"
     },
     {
       "category": "Hardware",
@@ -250,10 +257,10 @@
     },
     {
       "category": "Hardware",
-      "name": "Internal Registers for caliptra-rtl",
-      "summary": "Latest register description for caliptra-rtl components",
-      "repo": "Caliptra RTL",
-      "href": "https://chipsalliance.github.io/caliptra-rtl/main/internal-regs/?p="
+      "name": "Adam's Bridge Hardware Specification",
+      "summary": "",
+      "repo": "Adam's Bridge",
+      "doc": "docs/AdamsBridgeHardwareSpecification.md"
     },
     {
       "category": "Hardware",
@@ -268,13 +275,6 @@
       "summary": "",
       "repo": "Adam's Bridge",
       "doc": "docs/AdamsBridgeSCA.md"
-    },
-    {
-      "category": "Hardware",
-      "name": "Adam's Bridge Hardware Specification",
-      "summary": "",
-      "repo": "Adam's Bridge",
-      "doc": "docs/AdamsBridgeHardwareSpecification.md"
     },
     {
       "category": "Software",
