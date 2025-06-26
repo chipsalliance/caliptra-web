@@ -1,5 +1,9 @@
 {
   "repositories": {
+    "Caliptra": {
+      "pattern": "https://github.com/chipsalliance/Caliptra/blob/{ref}/{doc}",
+      "ref": "d96ec795ef44dfdeb5a2def514573376d93c41cd"
+    },
     "Caliptra Subsystem": {
       "pattern": "https://github.com/chipsalliance/caliptra-ss/blob/{ref}/{doc}",
       "ref": "40367c04ca3d36d89a08bef57238a4823bde74d4"
@@ -8,41 +12,44 @@
       "pattern": "https://github.com/chipsalliance/caliptra-rtl/blob/{ref}/{doc}",
       "ref": "32b51fc0b7bd2e6b8c5bac1446d98aa03888c831"
     },
-    "Adam's Bridge": {
-      "pattern": "https://github.com/chipsalliance/adams-bridge/blob/{ref}/{doc}",
-      "ref": "ea6dedf31ab339f2f50428481349c78cb392d6d0"
+    "VeeR EL2 RISC-V Core": {
+      "pattern": "https://github.com/chipsalliance/Cores-VeeR-EL2/blob/{ref}/{doc}",
+      "ref": "ed1be427509322bb3f5ac8a372f46463e8faa484"
     },
     "Caliptra SW": {
       "pattern": "https://github.com/chipsalliance/caliptra-sw/blob/{ref}/{doc}",
       "ref": "d7b13851f06b8224e13bb95d668c8e255cb0f9c6"
     },
-    "Caliptra DPE": {
-      "pattern": "https://github.com/chipsalliance/caliptra-dpe/blob/{ref}/{doc}",
-      "ref": "78629c0d363940d4691b28d0d0c0f77fe58407b2"
-    },
     "Caliptra MCU SW": {
       "pattern": "https://github.com/chipsalliance/caliptra-mcu-sw/blob/{ref}/{doc}",
       "ref": "54d583ec5f420d6b356ad875f2467d8ef209c97b"
     },
-    "Caliptra": {
-      "pattern": "https://github.com/chipsalliance/Caliptra/blob/{ref}/{doc}",
-      "ref": "d96ec795ef44dfdeb5a2def514573376d93c41cd"
-    },
-    "VeeR EL2 RISC-V Core": {
-      "pattern": "https://github.com/chipsalliance/Cores-VeeR-EL2/blob/{ref}/{doc}",
-      "ref": "ed1be427509322bb3f5ac8a372f46463e8faa484"
+    "Caliptra DPE": {
+      "pattern": "https://github.com/chipsalliance/caliptra-dpe/blob/{ref}/{doc}",
+      "ref": "78629c0d363940d4691b28d0d0c0f77fe58407b2"
     },
     "I3C Core": {
       "pattern": "https://github.com/chipsalliance/i3c-core/blob/{ref}/{doc}",
       "ref": "fe68e0dfb704efec4684168b839906a2a089e05e"
+    },
+    "Adam's Bridge": {
+      "pattern": "https://github.com/chipsalliance/adams-bridge/blob/{ref}/{doc}",
+      "ref": "ea6dedf31ab339f2f50428481349c78cb392d6d0"
     }
   },
   "documents": [
     {
       "category": "Hardware",
+      "name": "Caliptra: A Datacenter System on a Chip (SoC) Root of Trust (RoT)",
+      "summary": "Project background",
+      "repo": "Caliptra",
+      "doc": "doc/Caliptra.md"
+    },
+    {
+      "category": "Hardware",
       "name": "I3C Core Documentation",
       "summary": "Latest documentation for the I3C core",
-      "repo": "i3c-core",
+      "repo": "I3C Core",
       "href": "https://chipsalliance.github.io/i3c-core"
     },
     {
@@ -90,7 +97,7 @@
     {
       "category": "Hardware",
       "name": "PWRMGR Programmer's Guide",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra Subsystem",
       "doc": "src/pwrmgr/doc/programmers_guide.md"
     },
@@ -104,14 +111,14 @@
     {
       "category": "Hardware",
       "name": "OTP Controller Memory Map",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra Subsystem",
       "doc": "src/fuse_ctrl/doc/otp_ctrl_mmap.md"
     },
     {
       "category": "Hardware",
       "name": "OTP Controller Registers",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra Subsystem",
       "doc": "src/fuse_ctrl/doc/registers.md"
     },
@@ -125,28 +132,28 @@
     {
       "category": "Hardware",
       "name": "OTP Controller Digests",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra Subsystem",
       "doc": "src/fuse_ctrl/doc/otp_ctrl_digests.md"
     },
     {
       "category": "Hardware",
       "name": "Analog Sensor Top Technical Specification",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra Subsystem",
       "doc": "src/ast/README.md"
     },
     {
       "category": "Hardware",
       "name": "Analog Sensor Top Interface Signals",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra Subsystem",
       "doc": "src/ast/doc/interfaces.md"
     },
     {
       "category": "Hardware",
       "name": "Caliptra Subsystem Hardware Specification",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra Subsystem",
       "doc": "docs/CaliptraSSHardwareSpecification.md"
     },
@@ -167,7 +174,7 @@
     {
       "category": "Hardware",
       "name": "FV ECC Block Overview",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra RTL",
       "doc": "src/ecc/formal/fv_ecc_block_overview.pdf"
     },
@@ -181,7 +188,7 @@
     {
       "category": "Hardware",
       "name": "Caliptra Hardware Specification",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra RTL",
       "doc": "docs/CaliptraHardwareSpecification.md"
     },
@@ -258,14 +265,14 @@
     {
       "category": "Hardware",
       "name": "Threat Model for Securing Adams Bridge Against Side-Channel Attacks",
-      "summary": "-",
+      "summary": "",
       "repo": "Adam's Bridge",
       "doc": "docs/AdamsBridgeSCA.md"
     },
     {
       "category": "Hardware",
       "name": "Adam's Bridge Hardware Specification",
-      "summary": "-",
+      "summary": "",
       "repo": "Adam's Bridge",
       "doc": "docs/AdamsBridgeHardwareSpecification.md"
     },
@@ -279,7 +286,7 @@
     {
       "category": "Software",
       "name": "Caliptra FMC Specification",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra SW",
       "doc": "fmc/README.md"
     },
@@ -307,7 +314,7 @@
     {
       "category": "Software",
       "name": "Caliptra ROM Specification",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra SW",
       "doc": "rom/dev/README.md"
     },
@@ -349,14 +356,14 @@
     {
       "category": "Software",
       "name": "SOC Manifest",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra SW",
       "doc": "auth-manifest/README.md"
     },
     {
       "category": "Software",
       "name": "Caliptra C API - libcaliptra",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra SW",
       "doc": "libcaliptra/README.md"
     },
@@ -398,7 +405,7 @@
     {
       "category": "Software",
       "name": "Caliptra SW Tests",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra SW",
       "doc": "test/README.md"
     },
@@ -447,7 +454,7 @@
     {
       "category": "Software",
       "name": "Tock fork of ufmt",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra MCU SW",
       "doc": "runtime/userspace/libtock/ufmt/README.md"
     },
@@ -461,7 +468,7 @@
     {
       "category": "Software",
       "name": "SPI Flash Layout",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra MCU SW",
       "doc": "docs/src/flash_layout.md"
     },
@@ -552,33 +559,33 @@
     {
       "category": "Integration",
       "name": "Caliptra Checklist and Evaluation Methodology",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra",
       "doc": "CaliptraChecklistAndEvaluationMethodology.md"
     },
     {
       "category": "Integration",
       "name": "PWRMGR Checklist",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra Subsystem",
       "doc": "src/pwrmgr/doc/checklist.md"
     },
     {
       "category": "Integration",
       "name": "UART Checklist",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra RTL",
       "doc": "src/uart/doc/checklist.md"
     },
     {
-      "category": "Governance",
+      "category": "Hardware",
       "name": "Caliptra",
-      "summary": "Overview of the Caliptra project",
+      "summary": "Readme of the Caliptra project",
       "repo": "Caliptra",
       "doc": "README.md"
     },
     {
-      "category": "Governance",
+      "category": "Hardware",
       "name": "Contributing to Caliptra",
       "summary": "Guidelines for contributing to the project",
       "repo": "Caliptra",
@@ -586,71 +593,64 @@
     },
     {
       "category": "Governance",
-      "name": "Workgroup Charter for Caliptra, a CHIPS Alliance Workgroup",
-      "summary": "-",
+      "name": "Workgroup Charter for Caliptra",
+      "summary": "A formal charter of the Caliptra CHIPS Alliance Workgroup",
       "repo": "Caliptra",
       "doc": "CaliptraWGTechnicalCharter.md"
     },
     {
       "category": "Governance",
       "name": "Caliptra Trademark Usage Policy",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra",
       "doc": "CaliptraTrademarkPolicy.md"
     },
     {
       "category": "Governance",
       "name": "Caliptra Trademark Audit Process",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra",
       "doc": "CaliptraTrademarkAuditProcess.md"
     },
     {
       "category": "Governance",
       "name": "Caliptra Project Security Incident Response",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra",
       "doc": "SECURITY.md"
     },
     {
       "category": "Governance",
       "name": "Caliptra Technical Advisory Committee (TAC) Members",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra",
       "doc": "MAINTAINERS.md"
     },
     {
       "category": "Governance",
       "name": "GitHub Rules",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra",
       "doc": "GitHubRules.md"
     },
     {
       "category": "Governance",
-      "name": "Caliptra: A Datacenter System on a Chip (SoC) Root of Trust (RoT)",
-      "summary": "-",
-      "repo": "Caliptra",
-      "doc": "doc/Caliptra.md"
-    },
-    {
-      "category": "Governance",
       "name": "Caliptra Security Assessment Report",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra",
       "doc": "doc/NCC_Group_Microsoft_MSFT283_Report_2023-10-13_v1.2.pdf"
     },
     {
-      "category": "Governance",
+      "category": "Hardware",
       "name": "Hardware Release Process",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra",
       "doc": "doc/HWReleaseProcess.md"
     },
     {
       "category": "Governance",
       "name": "Caliptra Compliant Brand Guidelines",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra",
       "doc": "doc/branding_guide/Caliptra_Compliant_Brand_Guidelines_2025-02-17.pdf"
     },
@@ -697,37 +697,37 @@
       "doc": "ci-tools/file-header-fix/README.md"
     },
     {
-      "category": "Other",
+      "category": "Hardware",
       "name": "OCP L.O.C.K Specification",
       "summary": "Layered Open-source Cryptographic Key management specification. This is an optional feature for Caliptra Subsystem 2.1+.",
       "repo": "Caliptra",
       "doc": "doc/ocp_lock/Specification_v0.8.1.pdf"
     },
     {
-      "category": "Other",
+      "category": "Release Notes",
       "name": "Release Notes - Caliptra Subsystem",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra Subsystem",
       "doc": "Release_Notes.md"
     },
     {
-      "category": "Other",
+      "category": "Release Notes",
       "name": "Release Notes - Caliptra RTL",
-      "summary": "-",
+      "summary": "",
       "repo": "Caliptra RTL",
       "doc": "Release_Notes.md"
     },
     {
-      "category": "Other",
+      "category": "Release Notes",
       "name": "Release Notes - Adam's Bridge",
-      "summary": "-",
+      "summary": "",
       "repo": "Adam's Bridge",
       "doc": "Release_Notes.md"
     },
     {
-      "category": "Other",
+      "category": "Release Notes",
       "name": "Release Notes - VeeR EL2",
-      "summary": "-",
+      "summary": "",
       "repo": "VeeR EL2 RISC-V Core",
       "doc": "release-notes.md"
     }
