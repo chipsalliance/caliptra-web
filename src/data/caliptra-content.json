@@ -30,8 +30,8 @@
         { "icon": "Server", "text": "Datacenter-class hardware" }
       ],
       "buttons": [
-        { "text": "Explore Root of Trust for SoCs", "url": "./docs/targeting", "primary": true },
-        { "text": "Technical Details", "url": "./docs/specs", "primary": false }
+        { "text": "Explore Root of Trust for SoCs", "url": "https://github.com/chipsalliance/Caliptra", "primary": true },
+        { "text": "Technical Details", "url": "./docs.html", "primary": false }
       ],
       "image": "./images/home/item.svg",
       "reverse": false
@@ -71,11 +71,11 @@
       "title": "Test and DV dashboards",
       "tag": "Coverage",
       "paragraphs": [
-        "Test"
+        "Caliptra allows you to inspect the current test and coverage status for various subsystems, both for hardware and software"
       ],
       "listItems": [
         { "icon": "Code", "text": "Caliptra Software Dashboard", "url": "https://chipsalliance.github.io/caliptra-sw/"},
-        { "icon": "Grid2x2Check", "text": "Caliptra CPU DV coverage dashboard", "url":"./coverage" }
+        { "icon": "Grid2x2Check", "text": "Summary of Caliptra coverage dashboards", "url":"./coverage.html" }
       ],
       "image": "./images/home/item4.svg",
       "reverse": true
@@ -124,6 +124,11 @@
         "name": "I3C Core",
         "description": "Latest coverage dashboard for the I3C Core DV",
         "link": "https://chipsalliance.github.io/i3c-core/coverview.html#/"
+      },
+      {
+        "name": "Caliptra software coverage",
+        "description": "Latest coverage dashboard for the caliptra-sw repository",
+        "link": "https://chipsalliance.github.io/caliptra-sw/"
       }
     ]
   },
