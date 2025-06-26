@@ -86,8 +86,8 @@ def generate_repositories(top: Section, fetch_descriptions: bool) -> str:
             api_name: str = (result['areas_url'] if 'areas_url' in result else result['url']).removeprefix('https://github.com/')
             response = requests.get(f'https://api.github.com/repos/{api_name}').json()
             # Use the repository description from GitHub if available
-            if response['description'] is not None:
-                result['description'] = response['description']
+            if (desc := response.get('description')) is not None:
+                result['description'] = desc
 
         return result
 
