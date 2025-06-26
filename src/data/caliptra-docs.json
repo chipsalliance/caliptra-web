@@ -1,26 +1,26 @@
 {
   "repositories": {
-    "caliptra-ss": {
+    "Caliptra Subsystem": {
       "pattern": "https://github.com/chipsalliance/caliptra-ss/blob/{ref}/{doc}",
       "ref": "40367c04ca3d36d89a08bef57238a4823bde74d4"
     },
-    "caliptra-rtl": {
+    "Caliptra RTL": {
       "pattern": "https://github.com/chipsalliance/caliptra-rtl/blob/{ref}/{doc}",
       "ref": "32b51fc0b7bd2e6b8c5bac1446d98aa03888c831"
     },
-    "adams-bridge": {
+    "Adam's Bridge": {
       "pattern": "https://github.com/chipsalliance/adams-bridge/blob/{ref}/{doc}",
       "ref": "ea6dedf31ab339f2f50428481349c78cb392d6d0"
     },
-    "caliptra-sw": {
+    "Caliptra SW": {
       "pattern": "https://github.com/chipsalliance/caliptra-sw/blob/{ref}/{doc}",
       "ref": "d7b13851f06b8224e13bb95d668c8e255cb0f9c6"
     },
-    "caliptra-dpe": {
+    "Caliptra DPE": {
       "pattern": "https://github.com/chipsalliance/caliptra-dpe/blob/{ref}/{doc}",
       "ref": "78629c0d363940d4691b28d0d0c0f77fe58407b2"
     },
-    "caliptra-mcu-sw": {
+    "Caliptra MCU SW": {
       "pattern": "https://github.com/chipsalliance/caliptra-mcu-sw/blob/{ref}/{doc}",
       "ref": "54d583ec5f420d6b356ad875f2467d8ef209c97b"
     },
@@ -28,9 +28,13 @@
       "pattern": "https://github.com/chipsalliance/Caliptra/blob/{ref}/{doc}",
       "ref": "d96ec795ef44dfdeb5a2def514573376d93c41cd"
     },
-    "Cores-VeeR-EL2": {
+    "VeeR EL2 RISC-V Core": {
       "pattern": "https://github.com/chipsalliance/Cores-VeeR-EL2/blob/{ref}/{doc}",
       "ref": "ed1be427509322bb3f5ac8a372f46463e8faa484"
+    },
+    "I3C Core": {
+      "pattern": "https://github.com/chipsalliance/i3c-core/blob/{ref}/{doc}",
+      "ref": "fe68e0dfb704efec4684168b839906a2a089e05e"
     }
   },
   "documents": [
@@ -45,504 +49,504 @@
       "category": "Hardware",
       "name": "VeeR EL2 Programmer's Reference Manual",
       "summary": "Latest documentation for the VeeR EL2 core",
-      "repo": "Cores-VeeR-EL2",
+      "repo": "VeeR EL2 RISC-V Core",
       "href": "https://chipsalliance.github.io/Cores-VeeR-EL2/html/main/docs_rendered/html/index.html"
     },
     {
       "category": "Hardware",
       "name": "Caliptra Subsystem Overview",
       "summary": "Required dependencies, env variables, repository overview, simulation flow and regression tests",
-      "repo": "caliptra-ss",
+      "repo": "Caliptra Subsystem",
       "doc": "README.md"
     },
     {
       "category": "Hardware",
       "name": "Bus Specification",
       "summary": "Top level bus specification (TileLink-UL compliant)",
-      "repo": "caliptra-ss",
+      "repo": "Caliptra Subsystem",
       "doc": "src/tlul/README.md"
     },
     {
       "category": "Hardware",
       "name": "TileLink-UL Protocol Checker",
       "summary": "Protocol checked description for the TileLink-UL bus",
-      "repo": "caliptra-ss",
+      "repo": "Caliptra Subsystem",
       "doc": "src/tlul/doc/TlulProtocolChecker.md"
     },
     {
       "category": "Hardware",
       "name": "TLUL XBAR DV Document",
       "summary": "TileLink-UL bus testing overview",
-      "repo": "caliptra-ss",
+      "repo": "Caliptra Subsystem",
       "doc": "src/tlul/doc/dv/README.md"
     },
     {
       "category": "Hardware",
       "name": "PWRMGR Theory of Operation",
       "summary": "Overview of Power Manager's functionality",
-      "repo": "caliptra-ss",
+      "repo": "Caliptra Subsystem",
       "doc": "src/pwrmgr/doc/theory_of_operation.md"
     },
     {
       "category": "Hardware",
       "name": "PWRMGR Programmer's Guide",
       "summary": "-",
-      "repo": "caliptra-ss",
+      "repo": "Caliptra Subsystem",
       "doc": "src/pwrmgr/doc/programmers_guide.md"
     },
     {
       "category": "Hardware",
       "name": "OTP Controller Field Descriptions",
       "summary": "Description of fields stored in the OTP memory",
-      "repo": "caliptra-ss",
+      "repo": "Caliptra Subsystem",
       "doc": "src/fuse_ctrl/doc/otp_ctrl_field_descriptions.md"
     },
     {
       "category": "Hardware",
       "name": "OTP Controller Memory Map",
       "summary": "-",
-      "repo": "caliptra-ss",
+      "repo": "Caliptra Subsystem",
       "doc": "src/fuse_ctrl/doc/otp_ctrl_mmap.md"
     },
     {
       "category": "Hardware",
       "name": "OTP Controller Registers",
       "summary": "-",
-      "repo": "caliptra-ss",
+      "repo": "Caliptra Subsystem",
       "doc": "src/fuse_ctrl/doc/registers.md"
     },
     {
       "category": "Hardware",
       "name": "OTP Controller Partitions",
       "summary": "Description of OTP partition attributes",
-      "repo": "caliptra-ss",
+      "repo": "Caliptra Subsystem",
       "doc": "src/fuse_ctrl/doc/otp_ctrl_partitions.md"
     },
     {
       "category": "Hardware",
       "name": "OTP Controller Digests",
       "summary": "-",
-      "repo": "caliptra-ss",
+      "repo": "Caliptra Subsystem",
       "doc": "src/fuse_ctrl/doc/otp_ctrl_digests.md"
     },
     {
       "category": "Hardware",
       "name": "Analog Sensor Top Technical Specification",
       "summary": "-",
-      "repo": "caliptra-ss",
+      "repo": "Caliptra Subsystem",
       "doc": "src/ast/README.md"
     },
     {
       "category": "Hardware",
       "name": "Analog Sensor Top Interface Signals",
       "summary": "-",
-      "repo": "caliptra-ss",
+      "repo": "Caliptra Subsystem",
       "doc": "src/ast/doc/interfaces.md"
     },
     {
       "category": "Hardware",
       "name": "Caliptra Subsystem Hardware Specification",
       "summary": "-",
-      "repo": "caliptra-ss",
+      "repo": "Caliptra Subsystem",
       "doc": "docs/CaliptraSSHardwareSpecification.md"
     },
     {
       "category": "Hardware",
       "name": "Caliptra Hands-On Guide",
       "summary": "Required dependencies, env variables, repository overview, simulation flow and regression tests for caliptra-rtl",
-      "repo": "caliptra-rtl",
+      "repo": "Caliptra RTL",
       "doc": "README.md"
     },
     {
       "category": "Hardware",
       "name": "UART HWIP Technical Specification",
       "summary": "Specification, overview of the functionality and a programmer's guide",
-      "repo": "caliptra-rtl",
+      "repo": "Caliptra RTL",
       "doc": "src/uart/doc/_index.md"
     },
     {
       "category": "Hardware",
       "name": "FV ECC Block Overview",
       "summary": "-",
-      "repo": "caliptra-rtl",
+      "repo": "Caliptra RTL",
       "doc": "src/ecc/formal/fv_ecc_block_overview.pdf"
     },
     {
       "category": "Hardware",
       "name": "JTAG DPI module for OpenOCD remote_bitbang driver",
       "summary": "Overview of a JTAG over DPI library",
-      "repo": "caliptra-rtl",
+      "repo": "Caliptra RTL",
       "doc": "src/integration/test_suites/libs/jtagdpi/README.md"
     },
     {
       "category": "Hardware",
       "name": "Caliptra Hardware Specification",
       "summary": "-",
-      "repo": "caliptra-rtl",
+      "repo": "Caliptra RTL",
       "doc": "docs/CaliptraHardwareSpecification.md"
     },
     {
       "category": "Hardware",
       "name": "UART DV Document",
       "summary": "UART testing overview",
-      "repo": "caliptra-rtl",
+      "repo": "Caliptra RTL",
       "doc": "src/uart/doc/dv/index.md"
     },
     {
       "category": "Hardware",
       "name": "SHA512",
       "summary": "SHA512 testing overview",
-      "repo": "caliptra-rtl",
+      "repo": "Caliptra RTL",
       "doc": "src/sha512/formal/readme.md"
     },
     {
       "category": "Hardware",
       "name": "ECC",
       "summary": "ECC proofs",
-      "repo": "caliptra-rtl",
+      "repo": "Caliptra RTL",
       "doc": "src/ecc/formal/readme.md"
     },
     {
       "category": "Hardware",
       "name": "SHA256",
       "summary": "SHA256 testing overview",
-      "repo": "caliptra-rtl",
+      "repo": "Caliptra RTL",
       "doc": "src/sha256/formal/readme.md"
     },
     {
       "category": "Hardware",
       "name": "SHA512_MASKED",
       "summary": "SHA512_MASKED testing overview",
-      "repo": "caliptra-rtl",
+      "repo": "Caliptra RTL",
       "doc": "src/sha512_masked/formal/readme.md"
     },
     {
       "category": "Hardware",
       "name": "HMAC",
       "summary": "HMAC testing overview",
-      "repo": "caliptra-rtl",
+      "repo": "Caliptra RTL",
       "doc": "src/hmac/formal/readme.md"
     },
     {
       "category": "Hardware",
       "name": "DOE",
       "summary": "DOE testing overview",
-      "repo": "caliptra-rtl",
+      "repo": "Caliptra RTL",
       "doc": "src/doe/readme.md"
     },
     {
       "category": "Hardware",
       "name": "HMAC DRBG",
       "summary": "HMAC DRGB testing overview",
-      "repo": "caliptra-rtl",
+      "repo": "Caliptra RTL",
       "doc": "src/hmac_drbg/formal/readme.md"
     },
     {
       "category": "Hardware",
       "name": "Internal Registers for caliptra-rtl",
       "summary": "Latest register description for caliptra-rtl components",
-      "repo": "caliptra-rtl",
+      "repo": "Caliptra RTL",
       "href": "https://chipsalliance.github.io/caliptra-rtl/main/internal-regs/?p="
     },
     {
       "category": "Hardware",
       "name": "Adam's Bridge Hands-On Guide",
       "summary": "Required dependencies, env variables, repository overview, simulation flow and regression tests",
-      "repo": "adams-bridge",
+      "repo": "Adam's Bridge",
       "doc": "README.md"
     },
     {
       "category": "Hardware",
       "name": "Threat Model for Securing Adams Bridge Against Side-Channel Attacks",
       "summary": "-",
-      "repo": "adams-bridge",
+      "repo": "Adam's Bridge",
       "doc": "docs/AdamsBridgeSCA.md"
     },
     {
       "category": "Hardware",
       "name": "Adam's Bridge Hardware Specification",
       "summary": "-",
-      "repo": "adams-bridge",
+      "repo": "Adam's Bridge",
       "doc": "docs/AdamsBridgeHardwareSpecification.md"
     },
     {
       "category": "Software",
       "name": "Caliptra firmware and software",
       "summary": "Directory structure, building and testing for caliptra-sw",
-      "repo": "caliptra-sw",
+      "repo": "Caliptra SW",
       "doc": "README.md"
     },
     {
       "category": "Software",
       "name": "Caliptra FMC Specification",
       "summary": "-",
-      "repo": "caliptra-sw",
+      "repo": "Caliptra SW",
       "doc": "fmc/README.md"
     },
     {
       "category": "Software",
       "name": "Caliptra FMC Test Coverage",
       "summary": "Description of FMC test cases",
-      "repo": "caliptra-sw",
+      "repo": "Caliptra SW",
       "doc": "fmc/doc/diagrams/test-coverage.md"
     },
     {
       "category": "Software",
       "name": "Caliptra Runtime Firmware Specification",
       "summary": "Overview of the runtime firmware",
-      "repo": "caliptra-sw",
+      "repo": "Caliptra SW",
       "doc": "runtime/README.md"
     },
     {
       "category": "Software",
       "name": "Caliptra Runtime Firmware Test Coverage",
       "summary": "Describes test cases",
-      "repo": "caliptra-sw",
+      "repo": "Caliptra SW",
       "doc": "runtime/doc/test-coverage.md"
     },
     {
       "category": "Software",
       "name": "Caliptra ROM Specification",
       "summary": "-",
-      "repo": "caliptra-sw",
+      "repo": "Caliptra SW",
       "doc": "rom/dev/README.md"
     },
     {
       "category": "Software",
       "name": "Caliptra ROM Errors",
       "summary": "Fatal and non-fatal error codes description",
-      "repo": "caliptra-sw",
+      "repo": "Caliptra SW",
       "doc": "rom/dev/doc/error-attribution.md"
     },
     {
       "category": "Software",
       "name": "Caliptra ROM Thread Model",
       "summary": "Overview of rules to ensure minimal possibility of security issues",
-      "repo": "caliptra-sw",
+      "repo": "Caliptra SW",
       "doc": "rom/dev/doc/threat-model.md"
     },
     {
       "category": "Software",
       "name": "Caliptra ROM Test Coverage",
       "summary": "Describes test cases",
-      "repo": "caliptra-sw",
+      "repo": "Caliptra SW",
       "doc": "rom/dev/doc/test-coverage/test-coverage.md"
     },
     {
       "category": "Software",
       "name": "Generating Register Definitions",
       "summary": "Instructions for generating register definitions from caliptra-rtl",
-      "repo": "caliptra-sw",
+      "repo": "Caliptra SW",
       "doc": "registers/README.md"
     },
     {
       "category": "Software",
       "name": "Emulator for Caliptra",
       "summary": "Emulator's class and state diagrams",
-      "repo": "caliptra-sw",
+      "repo": "Caliptra SW",
       "doc": "sw-emulator/README.md"
     },
     {
       "category": "Software",
       "name": "SOC Manifest",
       "summary": "-",
-      "repo": "caliptra-sw",
+      "repo": "Caliptra SW",
       "doc": "auth-manifest/README.md"
     },
     {
       "category": "Software",
       "name": "Caliptra C API - libcaliptra",
       "summary": "-",
-      "repo": "caliptra-sw",
+      "repo": "Caliptra SW",
       "doc": "libcaliptra/README.md"
     },
     {
       "category": "Software",
       "name": "Caliptra C API Examples",
       "summary": "Example on how to interact with the Caliptra API and adapt it to the desired target",
-      "repo": "caliptra-sw",
+      "repo": "Caliptra SW",
       "doc": "libcaliptra/examples/README.md"
     },
     {
       "category": "Software",
       "name": "Caliptra C API Examples - hwmodel",
       "summary": "Example implementation of libcaliptra's hardware interface",
-      "repo": "caliptra-sw",
+      "repo": "Caliptra SW",
       "doc": "libcaliptra/examples/hwmodel/README.md"
     },
     {
       "category": "Software",
       "name": "Caliptra Error Codes",
       "summary": "Describes where Caliptra error codes are defined",
-      "repo": "caliptra-sw",
+      "repo": "Caliptra SW",
       "doc": "error/README.md"
     },
     {
       "category": "Software",
       "name": "C and Rust bindings for Caliptra RTL (verilated)",
       "summary": "Building and running C and Rust bindings for a verilated model of caliptra-rtl",
-      "repo": "caliptra-sw",
+      "repo": "Caliptra SW",
       "doc": "hw/verilated/README.md"
     },
     {
       "category": "Software",
       "name": "Caliptra FPGA Guide",
       "summary": "Guide for building and running caliptra-rtl on an FPGA",
-      "repo": "caliptra-sw",
+      "repo": "Caliptra SW",
       "doc": "hw/fpga/README.md"
     },
     {
       "category": "Software",
       "name": "Caliptra SW Tests",
       "summary": "-",
-      "repo": "caliptra-sw",
+      "repo": "Caliptra SW",
       "doc": "test/README.md"
     },
     {
       "category": "Software",
       "name": "FIPS Functional Test Suite",
       "summary": "Overview of the test suite and available test cases",
-      "repo": "caliptra-sw",
+      "repo": "Caliptra SW",
       "doc": "test/tests/fips_test_suite/README.md"
     },
     {
       "category": "Software",
       "name": "Caliptra DPE",
       "summary": "General overview of Caliptra DPE",
-      "repo": "caliptra-dpe",
+      "repo": "Caliptra DPE",
       "doc": "README.md"
     },
     {
       "category": "Software",
       "name": "Caliptra DPE Verification Tests",
       "summary": "Description of DPE tests",
-      "repo": "caliptra-dpe",
+      "repo": "Caliptra DPE",
       "doc": "verification/README.md"
     },
     {
       "category": "Software",
       "name": "Caliptra DPE Simulator",
       "summary": "Overview of the DPE simulator",
-      "repo": "caliptra-dpe",
+      "repo": "Caliptra DPE",
       "doc": "simulator/README.md"
     },
     {
       "category": "Software",
       "name": "Caliptra MCU firmware and software",
       "summary": "Overview of caliptra-mcu-sw",
-      "repo": "caliptra-mcu-sw",
+      "repo": "Caliptra MCU SW",
       "doc": "README.md"
     },
     {
       "category": "Software",
       "name": "libtock",
       "summary": "README of Caliptra's for of libtock",
-      "repo": "caliptra-mcu-sw",
+      "repo": "Caliptra MCU SW",
       "doc": "runtime/userspace/libtock/README.md"
     },
     {
       "category": "Software",
       "name": "Tock fork of ufmt",
       "summary": "-",
-      "repo": "caliptra-mcu-sw",
+      "repo": "Caliptra MCU SW",
       "doc": "runtime/userspace/libtock/ufmt/README.md"
     },
     {
       "category": "Software",
       "name": "Security Protocol and Data Model (SPDM)",
       "summary": "Description of the Security Protocol and Data Model used for secure communication between hardware components",
-      "repo": "caliptra-mcu-sw",
+      "repo": "Caliptra MCU SW",
       "doc": "docs/src/spdm.md"
     },
     {
       "category": "Software",
       "name": "SPI Flash Layout",
       "summary": "-",
-      "repo": "caliptra-mcu-sw",
+      "repo": "Caliptra MCU SW",
       "doc": "docs/src/flash_layout.md"
     },
     {
       "category": "Software",
       "name": "Platform Level Data Model (PLDM)",
       "summary": "Description of the Platform Level Data Model, which is used for communication between management controllers and managed devices",
-      "repo": "caliptra-mcu-sw",
+      "repo": "Caliptra MCU SW",
       "doc": "docs/src/pldm.md"
     },
     {
       "category": "Software",
       "name": "Image Loading",
       "summary": "Overview of Image Loading component, providing support for loading and verifying SoC images",
-      "repo": "caliptra-mcu-sw",
+      "repo": "Caliptra MCU SW",
       "doc": "docs/src/image_loading.md"
     },
     {
       "category": "Software",
       "name": "Reference ROM Specification",
       "summary": "Specification of the reference ROM, which gets executed when the MCU starts",
-      "repo": "caliptra-mcu-sw",
+      "repo": "Caliptra MCU SW",
       "doc": "docs/src/rom.md"
     },
     {
       "category": "Software",
       "name": "PLDM Update Package",
       "summary": "Describes the package format used for Caliptra streaming boot and firmware updates",
-      "repo": "caliptra-mcu-sw",
+      "repo": "Caliptra MCU SW",
       "doc": "docs/src/pldm_package.md"
     },
     {
       "category": "Software",
       "name": "Firmware Update",
       "summary": "Overview of the firmware update procedure",
-      "repo": "caliptra-mcu-sw",
+      "repo": "Caliptra MCU SW",
       "doc": "docs/src/firmware_update.md"
     },
     {
       "category": "Software",
       "name": "MCTP Stack",
       "summary": "Overview of the MCTP protocol and API",
-      "repo": "caliptra-mcu-sw",
+      "repo": "Caliptra MCU SW",
       "doc": "docs/src/mctp.md"
     },
     {
       "category": "Software",
       "name": "Caliptra Manufacturer Control Unit (MCU) Firmware and SDK",
       "summary": "Overview of MCU's features",
-      "repo": "caliptra-mcu-sw",
+      "repo": "Caliptra MCU SW",
       "doc": "docs/src/mcu.md"
     },
     {
       "category": "Software",
       "name": "Flash Controller",
       "summary": "Overview of the flash controller stack and its API",
-      "repo": "caliptra-mcu-sw",
+      "repo": "Caliptra MCU SW",
       "doc": "docs/src/flash_controller.md"
     },
     {
       "category": "Software",
       "name": "Runtime Specification",
       "summary": "Overview of the MCU runtime firmware architecture",
-      "repo": "caliptra-mcu-sw",
+      "repo": "Caliptra MCU SW",
       "doc": "docs/src/runtime.md"
     },
     {
       "category": "Software",
       "name": "Caliptra MCU Firmware Documentation",
       "summary": "Latest documentation for caliptra-mcu-sw",
-      "repo": "caliptra-mcu-sw",
+      "repo": "Caliptra MCU SW",
       "href": "https://chipsalliance.github.io/caliptra-mcu-sw"
     },
     {
       "category": "Integration",
       "name": "Caliptra Subsystem Integration Specification",
       "summary": "Integration specification for the Caliptra Subsystem",
-      "repo": "caliptra-ss",
+      "repo": "Caliptra Subsystem",
       "doc": "docs/CaliptraSSIntegrationSpecification.md"
     },
     {
       "category": "Integration",
       "name": "Caliptra Integration Specification",
       "summary": "Integration specification for Caliptra RTL",
-      "repo": "caliptra-rtl",
+      "repo": "Caliptra RTL",
       "doc": "docs/CaliptraIntegrationSpecification.md"
     },
     {
@@ -556,14 +560,14 @@
       "category": "Integration",
       "name": "PWRMGR Checklist",
       "summary": "-",
-      "repo": "caliptra-ss",
+      "repo": "Caliptra Subsystem",
       "doc": "src/pwrmgr/doc/checklist.md"
     },
     {
       "category": "Integration",
       "name": "UART Checklist",
       "summary": "-",
-      "repo": "caliptra-rtl",
+      "repo": "Caliptra RTL",
       "doc": "src/uart/doc/checklist.md"
     },
     {
@@ -654,42 +658,42 @@
       "category": "Governance",
       "name": "Caliptra Release Checklist",
       "summary": "Describes the release creation process",
-      "repo": "caliptra-rtl",
+      "repo": "Caliptra RTL",
       "doc": "docs/CaliptraReleaseChecklist.md"
     },
     {
       "category": "Governance",
       "name": "Caliptra 2.0 Branching Strategy",
       "summary": "Branch naming convention",
-      "repo": "caliptra-sw",
+      "repo": "Caliptra SW",
       "doc": "BRANCHING_STRATEGY.md"
     },
     {
       "category": "Tools",
       "name": "fuse_ctrl Partitions Generator",
-      "summary": "",
-      "repo": "caliptra-ss",
+      "summary": "A script for generation of configurable blocks for the fuse_ctrl instantiation",
+      "repo": "Caliptra Subsystem",
       "doc": "tools/scripts/fuse_ctrl_script/gen_fuse_ctrl_partitions.md"
     },
     {
       "category": "Tools",
       "name": "Caliptra fpga-boss",
       "summary": "Helper utility used for running Caliptra firmware on ZCU104 FPGA",
-      "repo": "caliptra-sw",
+      "repo": "Caliptra SW",
       "doc": "ci-tools/fpga-boss/README.md"
     },
     {
       "category": "Tools",
       "name": "Caliptra GitHub GCP Runner Infrastructure",
       "summary": "Overview of the CI runner architecture",
-      "repo": "caliptra-sw",
+      "repo": "Caliptra SW",
       "doc": "ci-tools/github-runner/README.md"
     },
     {
       "category": "Tools",
       "name": "file-header-fix",
       "summary": "Utility used to ensure that all files have proper copyright headers",
-      "repo": "caliptra-sw",
+      "repo": "Caliptra SW",
       "doc": "ci-tools/file-header-fix/README.md"
     },
     {
@@ -701,30 +705,30 @@
     },
     {
       "category": "Other",
-      "name": "Release Notes - Caliptra Subsysten",
+      "name": "Release Notes - Caliptra Subsystem",
       "summary": "-",
-      "repo": "caliptra-ss",
+      "repo": "Caliptra Subsystem",
       "doc": "Release_Notes.md"
     },
     {
       "category": "Other",
       "name": "Release Notes - Caliptra RTL",
       "summary": "-",
-      "repo": "caliptra-rtl",
+      "repo": "Caliptra RTL",
       "doc": "Release_Notes.md"
     },
     {
       "category": "Other",
       "name": "Release Notes - Adam's Bridge",
       "summary": "-",
-      "repo": "adams-bridge",
+      "repo": "Adam's Bridge",
       "doc": "Release_Notes.md"
     },
     {
       "category": "Other",
       "name": "Release Notes - VeeR EL2",
       "summary": "-",
-      "repo": "Cores-VeeR-EL2",
+      "repo": "VeeR EL2 RISC-V Core",
       "doc": "release-notes.md"
     }
   ]
