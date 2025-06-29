@@ -446,6 +446,48 @@
     },
     {
       "category": "Software",
+      "name": "Caliptra MCU Firmware Documentation",
+      "summary": "Latest documentation for caliptra-mcu-sw",
+      "repo": "Caliptra MCU SW",
+      "href": "https://chipsalliance.github.io/caliptra-mcu-sw"
+    },
+    {
+      "category": "Software",
+      "name": "Security Protocol and Data Model (SPDM)",
+      "summary": "Description of the Security Protocol and Data Model used for secure communication between hardware components",
+      "repo": "Caliptra MCU SW",
+      "doc": "docs/src/spdm.md"
+    },
+    {
+      "category": "Software",
+      "name": "Reference ROM Specification",
+      "summary": "Specification of the reference ROM, which gets executed when the MCU starts",
+      "repo": "Caliptra MCU SW",
+      "doc": "docs/src/rom.md"
+    },
+    {
+      "category": "Software",
+      "name": "Runtime Specification",
+      "summary": "Overview of the MCU runtime firmware architecture",
+      "repo": "Caliptra MCU SW",
+      "doc": "docs/src/runtime.md"
+    },
+    {
+      "category": "Software",
+      "name": "Image Loading",
+      "summary": "Overview of Image Loading component, providing support for loading and verifying SoC images",
+      "repo": "Caliptra MCU SW",
+      "doc": "docs/src/image_loading.md"
+    },
+    {
+      "category": "Software",
+      "name": "Firmware Update",
+      "summary": "Overview of the firmware update procedure",
+      "repo": "Caliptra MCU SW",
+      "doc": "docs/src/firmware_update.md"
+    },
+    {
+      "category": "Software",
       "name": "libtock",
       "summary": "README of Caliptra's for of libtock",
       "repo": "Caliptra MCU SW",
@@ -457,13 +499,6 @@
       "summary": "",
       "repo": "Caliptra MCU SW",
       "doc": "runtime/userspace/libtock/ufmt/README.md"
-    },
-    {
-      "category": "Software",
-      "name": "Security Protocol and Data Model (SPDM)",
-      "summary": "Description of the Security Protocol and Data Model used for secure communication between hardware components",
-      "repo": "Caliptra MCU SW",
-      "doc": "docs/src/spdm.md"
     },
     {
       "category": "Software",
@@ -481,31 +516,10 @@
     },
     {
       "category": "Software",
-      "name": "Image Loading",
-      "summary": "Overview of Image Loading component, providing support for loading and verifying SoC images",
-      "repo": "Caliptra MCU SW",
-      "doc": "docs/src/image_loading.md"
-    },
-    {
-      "category": "Software",
-      "name": "Reference ROM Specification",
-      "summary": "Specification of the reference ROM, which gets executed when the MCU starts",
-      "repo": "Caliptra MCU SW",
-      "doc": "docs/src/rom.md"
-    },
-    {
-      "category": "Software",
       "name": "PLDM Update Package",
       "summary": "Describes the package format used for Caliptra streaming boot and firmware updates",
       "repo": "Caliptra MCU SW",
       "doc": "docs/src/pldm_package.md"
-    },
-    {
-      "category": "Software",
-      "name": "Firmware Update",
-      "summary": "Overview of the firmware update procedure",
-      "repo": "Caliptra MCU SW",
-      "doc": "docs/src/firmware_update.md"
     },
     {
       "category": "Software",
@@ -527,20 +541,6 @@
       "summary": "Overview of the flash controller stack and its API",
       "repo": "Caliptra MCU SW",
       "doc": "docs/src/flash_controller.md"
-    },
-    {
-      "category": "Software",
-      "name": "Runtime Specification",
-      "summary": "Overview of the MCU runtime firmware architecture",
-      "repo": "Caliptra MCU SW",
-      "doc": "docs/src/runtime.md"
-    },
-    {
-      "category": "Software",
-      "name": "Caliptra MCU Firmware Documentation",
-      "summary": "Latest documentation for caliptra-mcu-sw",
-      "repo": "Caliptra MCU SW",
-      "href": "https://chipsalliance.github.io/caliptra-mcu-sw"
     },
     {
       "category": "Integration",
@@ -565,7 +565,7 @@
     },
     {
       "category": "Integration",
-      "name": "PWRMGR Checklist",
+      "name": "Power Manager Checklist",
       "summary": "",
       "repo": "Caliptra Subsystem",
       "doc": "src/pwrmgr/doc/checklist.md"
@@ -600,20 +600,6 @@
     },
     {
       "category": "Governance",
-      "name": "Caliptra Trademark Usage Policy",
-      "summary": "",
-      "repo": "Caliptra",
-      "doc": "CaliptraTrademarkPolicy.md"
-    },
-    {
-      "category": "Governance",
-      "name": "Caliptra Trademark Audit Process",
-      "summary": "",
-      "repo": "Caliptra",
-      "doc": "CaliptraTrademarkAuditProcess.md"
-    },
-    {
-      "category": "Governance",
       "name": "Caliptra Project Security Incident Response",
       "summary": "",
       "repo": "Caliptra",
@@ -625,13 +611,6 @@
       "summary": "",
       "repo": "Caliptra",
       "doc": "MAINTAINERS.md"
-    },
-    {
-      "category": "Governance",
-      "name": "GitHub Rules",
-      "summary": "",
-      "repo": "Caliptra",
-      "doc": "GitHubRules.md"
     },
     {
       "category": "Governance",
@@ -649,10 +628,31 @@
     },
     {
       "category": "Governance",
+      "name": "Caliptra Trademark Usage Policy",
+      "summary": "",
+      "repo": "Caliptra",
+      "doc": "CaliptraTrademarkPolicy.md"
+    },
+    {
+      "category": "Governance",
+      "name": "Caliptra Trademark Audit Process",
+      "summary": "",
+      "repo": "Caliptra",
+      "doc": "CaliptraTrademarkAuditProcess.md"
+    },
+    {
+      "category": "Governance",
       "name": "Caliptra Compliant Brand Guidelines",
       "summary": "",
       "repo": "Caliptra",
       "doc": "doc/branding_guide/Caliptra_Compliant_Brand_Guidelines_2025-02-17.pdf"
+    },
+    {
+      "category": "Governance",
+      "name": "GitHub Rules",
+      "summary": "",
+      "repo": "Caliptra",
+      "doc": "GitHubRules.md"
     },
     {
       "category": "Governance",
