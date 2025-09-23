@@ -5,7 +5,7 @@
   },
   "hero": {
     "title": "Caliptra: Building trust, one chip at a time",
-    "description": "Caliptra consists of IP and firmware for an integrated Root of Trust block. It targets datacenter-class SoCs like CPUs, GPUs, DPUs, TPUs. It is the specification, silicon logic, ROM and firmware for implementing a Root of Trust for Measurement (RTM) block inside an SoC."
+    "description": "The open source Caliptra project provides a reusable Root of Trust block that can be integrated into datacenter-class SoCs. With detailed specifications describing architecture, integration, and implementation, combined with a growing ecosystem of contributors, Caliptra is ready to be incorporated into your silicon design process."
   },
   "partners": [
     { "name": "Linux Foundation", "logo": "/caliptra-web/images/partners/linux_foundation.svg" },
@@ -71,7 +71,7 @@
       "title": "Test and DV dashboards",
       "tag": "Coverage",
       "paragraphs": [
-        "Caliptra allows you to inspect the current test and coverage status for various subsystems, both for hardware and software"
+        "Caliptra allows you to inspect the current test and coverage status for various subsystems, both for hardware and software."
       ],
       "listItems": [
         { "icon": "Code", "text": "Caliptra Software Dashboard", "url": "https://chipsalliance.github.io/caliptra-sw/"},
