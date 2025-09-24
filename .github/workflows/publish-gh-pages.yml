@@ -40,5 +40,5 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        if: github.ref == 'refs/heads/main' && github.event.repository.visibility == 'public'
+        if: github.ref == 'refs/heads/main'
         uses: actions/deploy-pages@v4
