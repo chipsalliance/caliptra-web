@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-README_VERSION="${README_VERSION:-0f303d99d37256976219edd8a2ad0df4875b1cdd}"
+README_VERSION="${README_VERSION:-eade4de93c77dd209fe63b1aced1fc6c6a63eb2a}"
 DIR="$(dirname "$(realpath "${BASH_SOURCE[@]}")")"
 
 if ! [ -d "${DIR}/.venv" ]; then
