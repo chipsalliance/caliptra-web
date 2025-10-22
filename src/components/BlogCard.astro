@@ -1,0 +1,96 @@
+---
+import { Calendar, FileText } from "@lucide/astro";
+
+const { post } = Astro.props;
+const formattedDate = new Date(post.date).toLocaleString('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric'
+});
+---
+
+<a href={post.url} class="blog-card-item">
+  <div class="blog-card-header">
+    <div class="blog-card-icon">
+      <FileText size={20} />
+    </div>
+    <h3 class="blog-card-title">{post.title}</h3>
+  </div>
+  <div class="blog-card-actions">
+    <span class="blog-card-category-badge">
+        <Calendar size={14} />
+        {formattedDate}
+    </span>
+  </div>
+</a>
+
+<style>
+  .blog-card-item {
+    background: #FFFFFF60;
+    border: 1px solid #d4d8e0;
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    height: 100%;
+  }
+
+  .blog-card-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border-color: var(--accent-primary);
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .blog-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-card-icon {
+    background: #f5f5f7;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-primary);
+    flex-shrink: 0;
+  }
+
+  .blog-card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.4;
+    color: var(--text-primary);
+  }
+
+  .blog-card-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: auto;
+    gap: 0.5rem;
+  }
+
+  .blog-card-category-badge {
+    font-size: 0.75rem;
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    background: #00587e15;
+    color: var(--accent-primary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 100px;
+    font-weight: 500;
+  }
+</style>

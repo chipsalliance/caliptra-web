@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "title": "Caliptra Announcements",
+    "description": "Latest announcements from the Caliptra project."
+  },
+  "announcements": [
+    {
+      "id": "announcement-1",
+      "title": "Announcements section on website is live!",
+      "date": "2025-10-22",
+      "url": "#"
+    }
+  ]
+}
