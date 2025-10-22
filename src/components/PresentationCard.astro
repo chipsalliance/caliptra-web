@@ -10,17 +10,17 @@ const formattedDate = new Date(presentation.date).toLocaleDateString('en-US', {
 ---
 
 <a href={presentation.url} target="_blank" rel="noopener noreferrer" class="presentation-card">
-  <img src={presentation.image} alt={presentation.title} class="presentation-card-image" />
+  {presentation.image && <img src={presentation.image} alt={presentation.title} class="presentation-card-image" />}
   <div class="presentation-card-content">
     <div class="presentation-card-meta">
         <div class="meta-item">
           <Calendar size={14} />
           <span>{formattedDate}</span>
         </div>
-        <div class="meta-item">
+        {presentation.image && <div class="meta-item">
           <typeIcon size={14} />
           <span>{presentation.conference}</span>
-        </div>
+        </div>}
       </div>
     <h3 class="presentation-card-title">
       {presentation.title}

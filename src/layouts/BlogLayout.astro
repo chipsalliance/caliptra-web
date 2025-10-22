@@ -1,0 +1,32 @@
+---
+import MainLayout from "./MainLayout.astro";
+
+export interface Props {
+  content: {
+    title: string;
+    date: string;
+  };
+}
+
+const {
+  content: { title, date },
+} = Astro.props;
+---
+
+<MainLayout title={title} description="Caliptra Blog">
+  <div class="blog-post">
+    <h1>{title}</h1>
+    <p><em>Published on {date}</em></p>
+    <article>
+      <slot />
+    </article>
+  </div>
+</MainLayout>
+
+<style>
+  .blog-post {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+</style>
