@@ -8,12 +8,12 @@
     "description": "Caliptra consists of IP and firmware for an integrated Root of Trust block. It targets datacenter-class SoCs like CPUs, GPUs, DPUs, TPUs. It is the specification, silicon logic, ROM and firmware for implementing a Root of Trust for Measurement (RTM) block inside an SoC."
   },
   "partners": [
-    { "name": "Linux Foundation", "logo": "./images/partners/linux_foundation.svg" },
-    { "name": "CHIPS Alliance", "logo": "./images/partners/chips_alliance.svg" },
-    { "name": "AMD", "logo": "./images/partners/amd.svg" },
-    { "name": "Google", "logo": "./images/partners/google.svg" },
-    { "name": "Microsoft", "logo": "./images/partners/microsoft.svg" },
-    { "name": "NVIDIA", "logo": "./images/partners/nvidia.svg" }
+    { "name": "Linux Foundation", "logo": "/caliptra-web/images/partners/linux_foundation.svg" },
+    { "name": "CHIPS Alliance", "logo": "/caliptra-web/images/partners/chips_alliance.svg" },
+    { "name": "AMD", "logo": "/caliptra-web/images/partners/amd.svg" },
+    { "name": "Google", "logo": "/caliptra-web/images/partners/google.svg" },
+    { "name": "Microsoft", "logo": "/caliptra-web/images/partners/microsoft.svg" },
+    { "name": "NVIDIA", "logo": "/caliptra-web/images/partners/nvidia.svg" }
   ],
   "sections": [
     {
@@ -31,9 +31,9 @@
       ],
       "buttons": [
         { "text": "Explore Root of Trust for SoCs", "url": "https://github.com/chipsalliance/Caliptra", "primary": true },
-        { "text": "Technical Details", "url": "./docs.html", "primary": false }
+        { "text": "Technical Details", "url": "/caliptra-web/docs.html", "primary": false }
       ],
-      "image": "./images/home/item.svg",
+      "image": "/caliptra-web/images/home/item.svg",
       "reverse": false
     },
     {
@@ -48,7 +48,7 @@
         { "icon": "Users", "text": "Large collaborator base" },
         { "icon": "Network", "text": "Enhanced interoperability" }
       ],
-      "image": "./images/home/item2.svg",
+      "image": "/caliptra-web/images/home/item2.svg",
       "reverse": true
     },
     {
@@ -63,7 +63,7 @@
       "paragraphs": [
         "Caliptra provides a complete implementation path from specification to silicon, including RTL, firmware, and documentation."
       ],
-      "image": "./images/home/item3.svg",
+      "image": "/caliptra-web/images/home/item3.svg",
       "reverse": false
     },
     {
@@ -75,9 +75,9 @@
       ],
       "listItems": [
         { "icon": "Code", "text": "Caliptra Software Dashboard", "url": "https://chipsalliance.github.io/caliptra-sw/"},
-        { "icon": "Grid2x2Check", "text": "Summary of Caliptra coverage dashboards", "url":"./coverage.html" }
+        { "icon": "Grid2x2Check", "text": "Summary of Caliptra coverage dashboards", "url":"/caliptra-web/coverage.html" }
       ],
-      "image": "./images/home/item4.svg",
+      "image": "/caliptra-web/images/home/item4.svg",
       "reverse": true
     }
   ],

@@ -42,7 +42,7 @@ const sortedPosts = posts.sort((a, b) => {
             <BlogCard post={{
               title: post.frontmatter.title,
               date: post.frontmatter.date,
-              url: `/blog/${post.file.split('/').pop()?.split('.').shift()}`,
+              url: `/caliptra-web/blog/${post.file.split('/').pop()?.split('.').shift()}`,
             }} />
           </div>
         ))}
