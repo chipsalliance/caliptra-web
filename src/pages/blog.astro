@@ -25,7 +25,7 @@ const sortedPosts = posts.sort((a, b) => {
         {announcements.announcements.map(announcement => (
           <li>
             <span>
-              <strong>{announcement.date}:</strong> {announcement.title}
+              <strong>{announcement.date}:</strong> <a href={announcement.url}>{announcement.title}</a>
             </span>
           </li>
         ))}
