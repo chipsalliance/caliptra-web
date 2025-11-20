@@ -5,10 +5,10 @@
   },
   "announcements": [
     {
-      "id": "announcement-1",
-      "title": "Announcements section on website is live!",
-      "date": "2025-10-22",
-      "url": "#"
+      "id": "core-rom-2p0p0-release",
+      "title": "Caliptra Core 2.0.0 ROM has been released.",
+      "date": "2025-11-20",
+      "url": "https://github.com/chipsalliance/caliptra-sw/releases/tag/rom-2.0.0"
     }
   ]
 }
