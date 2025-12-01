@@ -5,6 +5,12 @@
   },
   "announcements": [
     {
+      "id": "core-fw-2p0p0-release",
+      "title": "Caliptra Core 2.0.0 FMC and Runtime have been released.",
+      "date": "2025-11-25",
+      "url": "https://github.com/chipsalliance/caliptra-sw/releases/tag/fw-2.0.0"
+    },
+    {
       "id": "core-rom-2p0p0-release",
       "title": "Caliptra Core 2.0.0 ROM has been released.",
       "date": "2025-11-20",
