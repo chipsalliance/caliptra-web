@@ -16,15 +16,6 @@ npm install
 
 Python dependencies will be installed automatically during the first build.
 
-## Modifying the website
-
-### Adding Announcements
-Add an entry to [announcements.json](./src/data/caliptra-announcements.json).
-
-### Adding Blog Posts
-Commit a new markdown file to the directory [src/data/blog](./src/data/blog). Example: [hello-world](./src/data/blog/hello-world.md).
-Blog posts are published and sorted according to the commit date of the markdown source file.
-
 ## Building the website
 
 To build the website run from the root of the repository:
@@ -44,3 +35,12 @@ npm run dev
 ```
 
 This command also starts the development server and print the URL that you can connect to from your browser to visit the site.
+
+## Modifying the website
+
+### Adding Announcements
+Add an entry to [announcements.json](./src/data/caliptra-announcements.json).
+
+### Adding Blog Posts
+Commit a new markdown file to the directory [src/data/blog](./src/data/blog). Example: [hello-world](./src/data/blog/hello-world.md).
+Blog posts are published and sorted according to the commit date of the markdown source file.
