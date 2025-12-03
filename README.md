@@ -6,7 +6,7 @@ Repository contains a website that aggregates resources about the entire Caliptr
 
 ## Prerequisites
 
-Before building ensure that Node.js, npm and Python 3 are installed on you system.
+Before building ensure that Node.js, npm and Python 3 are installed on your system.
 
 To install JavaScript dependencies run from the root of the repository:
 
@@ -15,6 +15,15 @@ npm install
 ```
 
 Python dependencies will be installed automatically during the first build.
+
+## Modifying the website
+
+### Adding Announcements
+Add an entry to [announcements.json](./src/data/caliptra-announcements.json).
+
+### Adding Blog Posts
+Commit a new markdown file to the directory [src/data/blog](./src/data/blog). Example: [hello-world](./src/data/blog/hello-world.md).
+Blog posts are published and sorted according to the commit date of the markdown source file.
 
 ## Building the website
 

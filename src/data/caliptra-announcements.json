@@ -5,6 +5,30 @@
   },
   "announcements": [
     {
+      "id": "ss-2p1p1-release",
+      "title": "Caliptra Subsystem Patch 2.1.1 has been released.",
+      "date": "2025-12-02",
+      "url": "https://github.com/chipsalliance/caliptra-ss/releases/tag/css-v2.1.1"
+    },
+    {
+      "id": "ss-2p0p1-release",
+      "title": "Caliptra Subsystem Patch 2.0.1 has been released.",
+      "date": "2025-12-02",
+      "url": "https://github.com/chipsalliance/caliptra-ss/releases/tag/css-v2.0.1"
+    },
+    {
+      "id": "rtl-2p1p1-release",
+      "title": "Caliptra Core Patch 2.1.1 has been released.",
+      "date": "2025-12-02",
+      "url": "https://github.com/chipsalliance/caliptra-rtl/releases/tag/v2.1.1"
+    },
+    {
+      "id": "rtl-2p0p3-release",
+      "title": "Caliptra Core Patch 2.0.3 has been released.",
+      "date": "2025-12-02",
+      "url": "https://github.com/chipsalliance/caliptra-rtl/releases/tag/v2.0.3"
+    },
+    {
       "id": "core-fw-2p0p0-release",
       "title": "Caliptra Core 2.0.0 FMC and Runtime have been released.",
       "date": "2025-11-25",
