@@ -43,6 +43,15 @@ for (const category of categories) {
   }
 }
 
+// Group all documents by repository for the "All" tab
+const allDocsByRepo: {[repo: string]: Document[]} = Object.create(null);
+for (const repository of repositories) {
+  const result = documents.filter(doc => doc.repo === repository);
+  if (result.length > 0) {
+    allDocsByRepo[repository] = result;
+  }
+}
+
 const createSearchTerm = (doc: Document): string =>
   `${doc.document.toLowerCase()} ${doc.summary.toLowerCase()} ${doc.category.toLowerCase()} ${doc.repo.toLowerCase()}`;
 
@@ -73,9 +82,16 @@ const createSearchTerm = (doc: Document): string =>
       </div>
 
       <div class="tab-nav">
+        <button
+          class="tab-button active"
+          data-tab="all"
+        >
+          All
+          <span class="tab-count">({documents.length})</span>
+        </button>
         {categories.map((category, index) => (
           <button
-            class={`tab-button ${index === 0 ? 'active' : ''}`}
+            class={`tab-button`}
             data-tab={category.toLowerCase().replace(/\s+/g, '-')}
           >
             {category}
@@ -85,12 +101,9 @@ const createSearchTerm = (doc: Document): string =>
       </div>
 
       <div class="tab-content">
-        {categories.map((category, categoryIndex) => (
-          <div
-            class={`tab-panel ${categoryIndex === 0 ? 'active' : ''}`}
-            data-panel={category.toLowerCase().replace(/\s+/g, '-')}
-          >
-            {Object.entries(groupedDocs[category]).map(([repo, docs]) => (
+        <div class="tab-panel active" data-panel="all">
+          {Object.entries(allDocsByRepo).map(([repo, docs]) => (
+            <>
               <h3 class="docs-repo-title">{repo}</h3>
               <div class="docs-grid">
                 {docs.map((doc, index) => (
@@ -109,6 +122,36 @@ const createSearchTerm = (doc: Document): string =>
                   </a>
                 ))}
               </div>
+            </>
+          ))}
+        </div>
+
+        {categories.map((category, categoryIndex) => (
+          <div
+            class="tab-panel"
+            data-panel={category.toLowerCase().replace(/\s+/g, '-')}
+          >
+            {Object.entries(groupedDocs[category]).map(([repo, docs]) => (
+              <>
+                <h3 class="docs-repo-title">{repo}</h3>
+                <div class="docs-grid">
+                  {docs.map((doc, index) => (
+                    <a href={doc.href} class="doc-item" style={`animation-delay: ${index * 50}ms`} data-search-terms={createSearchTerm(doc)}>
+                      <div class="doc-header">
+                        <div class="doc-icon">
+                          <FileText size={20} />
+                        </div>
+                        <h3 class="doc-title">{doc.document}</h3>
+                      </div>
+                      <p class="doc-summary">{doc.summary}</p>
+                      <div class="doc-actions">
+                        <span class="doc-category-badge">{doc.category}</span>
+                        {doc.repo && <span class="doc-category-badge"><BookMarked size="14" /> {doc.repo}</span>}
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </>
             ))}
           </div>
         ))}
