@@ -103,7 +103,7 @@
       {
         "name": "Caliptra Subsystem coverage summary",
         "description": "Summary and a detailed overview of caliptra-ss coverage",
-        "link": "https://github.com/chipsalliance/caliptra-ss/blob/677fa3489b1e74f3d0817d4aae6eaee056ec90d8/docs/CaliptraSSCoverage.md"
+        "link": "https://github.com/chipsalliance/caliptra-ss/blob/main/docs/CaliptraSSCoverage.md"
       },
       {
         "name": "Caliptra Subsystem",
