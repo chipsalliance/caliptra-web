@@ -22,7 +22,7 @@ const { faq } = Astro.props;
               </span>
             </summary>
             <div class="faq-answer">
-              <p>{item.answer}</p>
+              <p set:html={item.answer}></p>
             </div>
           </details>
         ))
