@@ -44,7 +44,7 @@
         "Caliptra is an open-source project developed as part of the CHIPS Alliance, ensuring transparency and interoperability. The Caliptra community continues to grow and now includes 9elements, AMI, Antmicro, ASPEED, Axiado, Lubis EDA, ScaleFlux, Marvell and Nuvoton, who together have significant domain expertise across SoC design automation, firmware, and verification."
       ],
       "listItems": [
-        { "icon": "Code", "text": "Transparent codebase" },
+        { "icon": "Code", "text": "Transparent code base" },
         { "icon": "Users", "text": "Large collaborator base" },
         { "icon": "Network", "text": "Enhanced interoperability" }
       ],
