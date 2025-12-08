@@ -155,7 +155,7 @@
       },
       {
         "question": "How can I contribute to the Caliptra project?",
-        "answer": "Caliptra is an open-source project under the CHIPS Alliance. You can contribute by submitting pull requests, reporting issues, or joining discussions on the project's GitHub repositories."
+        "answer": "Caliptra is an open-source project under the CHIPS Alliance. You can contribute by submitting pull requests, reporting issues, or joining discussions on the project's GitHub repositories. Before contributing code, you'll need to become a CHIPS Alliance CLA signatory. For detailed guidelines and the contribution process, please visit our <a href=\"https://github.com/chipsalliance/Caliptra/blob/main/CONTRIBUTING.md\" target=\"_blank\" rel=\"noopener noreferrer\">Contributing page</a>."
       },
       {
         "question": "Is there a workgroup meeting?",
