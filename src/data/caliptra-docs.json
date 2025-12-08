@@ -701,7 +701,7 @@
       "name": "OCP L.O.C.K Specification",
       "summary": "Layered Open-source Cryptographic Key management specification. This is an optional feature for Caliptra Subsystem 2.1+.",
       "repo": "Caliptra",
-      "doc": "doc/ocp_lock/Specification_v0.8.1.pdf"
+      "href": "https://chipsalliance.github.io/Caliptra/ocp-lock/specification/HEAD/pdf/"
     },
     {
       "category": "Release Notes",
