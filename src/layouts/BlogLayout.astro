@@ -1,32 +1,425 @@
 ---
 import MainLayout from "./MainLayout.astro";
+import { ArrowLeft, Clock, Calendar } from "@lucide/astro";
 
 export interface Props {
   content: {
     title: string;
     date: string;
+    description?: string;
+    image?: string;
+    tags?: string[];
   };
 }
 
 const {
-  content: { title, date },
+  content: { title, date, description, image, tags = [] },
 } = Astro.props;
+
+// Calculate reading time (rough estimate)
+const content = await Astro.slots.render('default');
+const wordCount = content.split(/\s+/).length;
+const readingTime = Math.ceil(wordCount / 200); // Average reading speed
+
+// Format date
+const formattedDate = new Date(date).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+
+// OG meta tags
+const ogImage = image || '/caliptra-web/images/og-default.png';
+const canonicalURL = `${Astro.url.origin}${Astro.url.pathname}`;
 ---
 
-<MainLayout title={title} description="Caliptra Blog">
-  <div class="blog-post">
-    <h1>{title}</h1>
-    <p><em>Published on {date}</em></p>
-    <article>
-      <slot />
-    </article>
-  </div>
+<MainLayout title={`${title} | Caliptra Blog`} description={description || title}>
+  <Fragment slot="head">
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description || title} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="article:published_time" content={date} />
+    {tags.map(tag => <meta property="article:tag" content={tag} />)}
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description || title} />
+    <meta name="twitter:image" content={ogImage} />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+  </Fragment>
+
+  <article class="blog-post">
+    <div class="blog-post-container">
+      <nav class="blog-nav">
+        <a href="/caliptra-web/blog.html" class="back-button">
+          <ArrowLeft size={18} />
+          <span>Back to Blog</span>
+        </a>
+      </nav>
+
+      <header class="blog-header">
+        {tags.length > 0 && (
+          <div class="blog-tags">
+            {tags.map(tag => (
+              <span class="blog-tag">{tag}</span>
+            ))}
+          </div>
+        )}
+        
+        <h1 class="blog-title">{title}</h1>
+        
+        {description && (
+          <p class="blog-description">{description}</p>
+        )}
+        
+        <div class="blog-meta">
+          <div class="meta-item">
+            <Calendar size={16} />
+            <time datetime={date}>{formattedDate}</time>
+          </div>
+          <div class="meta-item">
+            <Clock size={16} />
+            <span>{readingTime} min read</span>
+          </div>
+        </div>
+      </header>
+
+      {image && (
+        <div class="blog-image">
+          <img src={image} alt={title} />
+        </div>
+      )}
+
+      <div class="blog-content">
+        <slot />
+      </div>
+
+      <footer class="blog-footer">
+        {tags.length > 0 && (
+          <div class="blog-footer-tags">
+            <strong>Tags:</strong>
+            {tags.map(tag => (
+              <span class="blog-tag">{tag}</span>
+            ))}
+          </div>
+        )}
+        
+        <div class="blog-share">
+          <strong>Share:</strong>
+          <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(canonicalURL)}`} target="_blank" rel="noopener" class="share-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+            X
+          </a>
+          <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(canonicalURL)}`} target="_blank" rel="noopener" class="share-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            LinkedIn
+          </a>
+        </div>
+      </footer>
+    </div>
+  </article>
 </MainLayout>
 
 <style>
   .blog-post {
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+
+  .blog-post-container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 2rem;
+  }
+
+  /* Navigation */
+  .blog-nav {
+    margin-bottom: 2rem;
+  }
+
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.2s;
+  }
+
+  .back-button:hover {
+    color: var(--accent-primary);
+    text-decoration: none;
+  }
+
+  /* Header */
+  .blog-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e5e5ea;
+  }
+
+  .blog-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .blog-tag {
+    display: inline-block;
+    background: #00587e15;
+    color: var(--accent-primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .blog-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+
+  .blog-description {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  .blog-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* Featured Image */
+  .blog-image {
+    margin-bottom: 3rem;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+  }
+
+  .blog-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Content */
+  .blog-content {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--text-primary); 
+  }
+
+  .blog-content :global(h2) {
+    font-size: 1.75rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+
+  .blog-content :global(h3) {
+    font-size: 1.375rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+  }
+
+  .blog-content :global(h4) {
+    font-size: 1.125rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+  }
+
+  .blog-content :global(p) {
+    margin-bottom: 1.5rem;
+  }
+
+  .blog-content :global(a) {
+    color: var(--accent-primary);
+    text-decoration: underline;
+  }
+
+  .blog-content :global(a:hover) {
+    text-decoration: none;
+  }
+
+  .blog-content :global(ul),
+  .blog-content :global(ol) {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+  }
+
+  .blog-content :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-content :global(blockquote) {
+    border-left: 4px solid var(--accent-primary);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: var(--text-secondary);
+  }
+
+  .blog-content :global(code) {
+    background: #f5f5f7;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-family: 'Monaco', 'Courier New', monospace;
+  }
+
+  .blog-content :global(pre) {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    overflow-x: auto;
+    margin: 2rem 0;
+  }
+
+  .blog-content :global(pre code) {
+    background: none;
+    padding: 0;
+    color: inherit;
+  }
+
+  .blog-content :global(img) {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin: 2rem 0;
+  }
+
+  .blog-content :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 0.9375rem;
+  }
+
+  .blog-content :global(th),
+  .blog-content :global(td) {
+    padding: 0.75rem;
+    border: 1px solid #e5e5ea;
+    text-align: left;
+  }
+
+  .blog-content :global(th) {
+    background: #f5f5f7;
+    font-weight: 600;
+  }
+
+  .blog-content :global(hr) {
+    border: none;
+    border-top: 1px solid #e5e5ea;
+    margin: 3rem 0;
+  }
+
+  /* Footer */
+  .blog-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e5e5ea;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .blog-footer-tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .blog-share {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .share-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.5rem 0.75rem;
+    background: #f5f5f7;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--accent-primary);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+  }
+
+  .share-link:hover {
+    background: var(--accent-primary);
+    color: white;
+    text-decoration: none;
+  }
+
+  .share-link svg {
+    flex-shrink: 0;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .blog-post {
+      padding: 1rem 0.75rem;
+    }
+
+    .blog-title {
+      font-size: 1.75rem;
+    }
+
+    .blog-description {
+      font-size: 1.0625rem;
+    }
+
+    .blog-meta {
+      gap: 0.75rem;
+    }
+
+    .blog-content {
+      font-size: 1rem;
+    }
+
+    .blog-content :global(h2) {
+      font-size: 1.5rem;
+    }
+
+    .blog-content :global(h3) {
+      font-size: 1.25rem;
+    }
+
+    .blog-footer {
+      flex-direction: column;
+    }
   }
 </style>
