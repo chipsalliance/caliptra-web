@@ -8,4 +8,68 @@ const { sections } = content;
 
 <MainLayout title={content.meta.title} description={content.meta.description}>
   <VersioningSection />
+
+  <section class="versioning section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Development</div>
+        <h2>Development Branches and Release Tags</h2>
+        <p class="section-description">
+        There are several versions of Caliptra HW and SW collateral, described above.
+        Each `major.minor` version has an associated development branch where release tags point to.
+        The table below summarizes the git repositories and branches used for the development and maintenance of each Caliptra version in the project.
+        </p>
+        <div class="compatibility-section">
+          <div class="version-table-wrapper">
+            <table class="version-table">
+              <thead>
+                <tr>
+                  <th><span style="font-weight:bold">Mode</span></th>
+                  <th><span style="font-weight:bold">Version</span></th>
+                  <th><span style="font-weight:bold">Caliptra Core HW Repo</span></th>
+                  <th><span style="font-weight:bold">Caliptra Subsystem HW Repo</span></th>
+                  <th><span style="font-weight:bold">Caliptra Core SW Repo</span></th>
+                  <th><span style="font-weight:bold">Caliptra MCU SW Repo</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Passive</td>
+                  <td>1.0</td>
+                  <td><a href="https://github.com/chipsalliance/caliptra-rtl/tree/patch_v1.0" target="_blank" rel="noopener noreferrer">caliptra-rtl:patch_v1.0</a></td>
+                  <td>N/A</td>
+                  <td><a href="https://github.com/chipsalliance/caliptra-sw/tree/caliptra-1.x" target="_blank" rel="noopener noreferrer">caliptra-sw:caliptra-1.x</a></td>
+                  <td>N/A</td>
+                </tr>
+                <tr>
+                  <td>Passive</td>
+                  <td>1.1</td>
+                  <td><a href="https://github.com/chipsalliance/caliptra-rtl/tree/patch_v1.1" target="_blank" rel="noopener noreferrer">caliptra-rtl:patch_v1.1</a></td>
+                  <td>N/A</td>
+                  <td><a href="https://github.com/chipsalliance/caliptra-sw/tree/caliptra-1.x" target="_blank" rel="noopener noreferrer">caliptra-sw:caliptra-1.x</a></td>
+                  <td>N/A</td>
+                </tr>
+                <tr>
+                  <td>Passive/Subsystem</td>
+                  <td>2.0</td>
+                  <td><a href="https://github.com/chipsalliance/caliptra-rtl/tree/patch_v2.0" target="_blank" rel="noopener noreferrer">caliptra-rtl:patch_v2.0</a></td>
+                  <td><a href="https://github.com/chipsalliance/caliptra-ss/tree/patch_ss_v1p0" target="_blank" rel="noopener noreferrer">caliptra-ss:patch_ss_v1p0</a></td>
+                  <td><a href="https://github.com/chipsalliance/caliptra-sw/tree/caliptra-2.0" target="_blank" rel="noopener noreferrer">caliptra-sw:caliptra-2.0</a></td>
+                  <td><a href="https://github.com/chipsalliance/caliptra-mcu-sw" target="_blank" rel="noopener noreferrer">caliptra-mcu-sw:main</a></td>
+                </tr>
+                <tr>
+                  <td>Passive/Subsystem</td>
+                  <td>2.1</td>
+                  <td><a href="https://github.com/chipsalliance/caliptra-rtl/tree/patch_v2.1" target="_blank" rel="noopener noreferrer">caliptra-rtl:patch_v2.1</a></td>
+                  <td><a href="https://github.com/chipsalliance/caliptra-ss/tree/patch_ss_v2.1" target="_blank" rel="noopener noreferrer">caliptra-ss:patch_ss_v2.1</a></td>
+                  <td><a href="https://github.com/chipsalliance/caliptra-sw" target="_blank" rel="noopener noreferrer">caliptra-sw:main</a></td>
+                  <td><a href="https://github.com/chipsalliance/caliptra-mcu-sw/tree/main-2.1" target="_blank" rel="noopener noreferrer">caliptra-mcu-sw:main-2.1</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </MainLayout>
