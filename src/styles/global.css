@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Inter';
-  src: url('/caliptra-web/Inter.ttf') format('truetype');
+  font-family: "Inter";
+  src: url("/caliptra-web/Inter.ttf") format("truetype");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -24,9 +24,20 @@
 }
 
 html {
-  font-family: 'Inter',-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
   scroll-behavior: smooth;
-  background-color: #F2F2F7;
+  background-color: #f2f2f7;
 }
 
 body {
@@ -45,7 +56,12 @@ a:hover {
   text-decoration: underline;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
   line-height: 1.2;
@@ -87,7 +103,6 @@ img {
   margin-right: auto;
   margin-left: auto;
 }
-
 
 /* Button styles */
 .btn {
@@ -174,21 +189,51 @@ img {
 }
 
 /* Animation utilities */
-.word-animation-delay-1 { animation-delay: 0.1s; }
-.word-animation-delay-2 { animation-delay: 0.2s; }
-.word-animation-delay-3 { animation-delay: 0.3s; }
-.word-animation-delay-4 { animation-delay: 0.4s; }
-.word-animation-delay-5 { animation-delay: 0.5s; }
-.word-animation-delay-6 { animation-delay: 0.6s; }
-.word-animation-delay-7 { animation-delay: 0.7s; }
-.word-animation-delay-8 { animation-delay: 0.8s; }
-.word-animation-delay-9 { animation-delay: 0.9s; }
-.word-animation-delay-10 { animation-delay: 1.0s; }
-.word-animation-delay-11 { animation-delay: 1.1s; }
-.word-animation-delay-12 { animation-delay: 1.2s; }
-.word-animation-delay-13 { animation-delay: 1.3s; }
-.word-animation-delay-14 { animation-delay: 1.4s; }
-.word-animation-delay-15 { animation-delay: 1.5s; }
+.word-animation-delay-1 {
+  animation-delay: 0.1s;
+}
+.word-animation-delay-2 {
+  animation-delay: 0.2s;
+}
+.word-animation-delay-3 {
+  animation-delay: 0.3s;
+}
+.word-animation-delay-4 {
+  animation-delay: 0.4s;
+}
+.word-animation-delay-5 {
+  animation-delay: 0.5s;
+}
+.word-animation-delay-6 {
+  animation-delay: 0.6s;
+}
+.word-animation-delay-7 {
+  animation-delay: 0.7s;
+}
+.word-animation-delay-8 {
+  animation-delay: 0.8s;
+}
+.word-animation-delay-9 {
+  animation-delay: 0.9s;
+}
+.word-animation-delay-10 {
+  animation-delay: 1s;
+}
+.word-animation-delay-11 {
+  animation-delay: 1.1s;
+}
+.word-animation-delay-12 {
+  animation-delay: 1.2s;
+}
+.word-animation-delay-13 {
+  animation-delay: 1.3s;
+}
+.word-animation-delay-14 {
+  animation-delay: 1.4s;
+}
+.word-animation-delay-15 {
+  animation-delay: 1.5s;
+}
 
 .animate-on-scroll {
   opacity: 0;
@@ -232,11 +277,10 @@ img {
 }
 
 @media (max-width: 768px) {
-
   .two-columns {
     grid-template-columns: 1fr;
   }
-  
+
   .reverse .text-content,
   .reverse .image-placeholder {
     order: initial;
@@ -244,31 +288,54 @@ img {
 }
 
 @media (max-width: 1240px) {
-
   main {
     padding: 0 1rem;
   }
 }
 
-  /* Custom Scrollbar */
-  .tab-nav::-webkit-scrollbar {
-    height: 4px;
-  }
+/* Custom Scrollbar */
+.tab-nav::-webkit-scrollbar {
+  height: 4px;
+}
 
-  .tab-nav::-webkit-scrollbar-track {
-    background: transparent;
-  }
+.tab-nav::-webkit-scrollbar-track {
+  background: transparent;
+}
 
-  .tab-nav::-webkit-scrollbar-thumb {
-    background: #d4d8e0;
-    border-radius: 2px;
-  }
+.tab-nav::-webkit-scrollbar-thumb {
+  background: #d4d8e0;
+  border-radius: 2px;
+}
 
-  .tab-nav::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-primary);
-  }
-  
-  .tab-nav {
-    scrollbar-width: thin;
-    scrollbar-color: #d4d8e0 transparent;
-  }
+.tab-nav::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+.tab-nav {
+  scrollbar-width: thin;
+  scrollbar-color: #d4d8e0 transparent;
+}
+
+/* Version table styles */
+.version-table-wrapper {
+  overflow-x: auto;
+}
+
+.version-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+}
+
+.version-table th,
+.version-table td {
+  padding: 0.75rem;
+  border: 1px solid #e5e5ea;
+  text-align: left;
+}
+
+.version-table th {
+  background: #f5f5f7;
+  color: var(--text-primary);
+}
