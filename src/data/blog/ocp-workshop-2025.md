@@ -17,16 +17,16 @@ Below we provide links to the presentations.
 
 ### Workshop Presentations
 
-- [Caliptra OCP LOCK Presentation](https://storage.googleapis.com/caliptra-website/presentations/ocp-workshop-2025/Caliptra%20OCP%20LOCK%20Presentation.pdf)
+- [Caliptra OCP LOCK Presentation](/caliptra-web/docs/caliptra-ocp-lock-presentation.pdf)
 
-- [Caliptra and FIPS 140-3 CMVP](https://storage.googleapis.com/caliptra-website/presentations/ocp-workshop-2025/Caliptra%20FIPS%202025.pptx)
+- [Caliptra and FIPS 140-3 CMVP](/caliptra-web/docs/caliptra-fips-2025.pptx)
 
-- [Device Ownership Transfer](https://storage.googleapis.com/caliptra-website/presentations/ocp-workshop-2025/OCP_2025_Caliptra_DOT.pptx)
+- [Device Ownership Transfer](/caliptra-web/docs/caliptra-dot-ocp-2025.pptx)
 
-- [Provisioning Flows for Caliptra Subsystem](https://storage.googleapis.com/caliptra-website/presentations/ocp-workshop-2025/Caliptra%20Subsystem%20Provisioning.pdf)
+- [Provisioning Flows for Caliptra Subsystem](/caliptra-web/docs/caliptra-subsystem-provisioning.pdf)
 
-- [Caliptra Contributing Process](https://storage.googleapis.com/caliptra-website/presentations/ocp-workshop-2025/Caliptra%20Contributor%20Process.pdf)
+- [Caliptra Contributing Process](/caliptra-web/docs/caliptra-contributor-process.pdf)
 
-- [OCP Caliptra Workshop: Attestation Architecture](https://storage.googleapis.com/caliptra-website/presentations/ocp-workshop-2025/OCP%20Caliptra%20Workshop_Attestation.pptx)
+- [OCP Caliptra Workshop: Attestation Architecture](/caliptra-web/docs/caliptra-attestation-ocp-workshop.pptx)
 
-- [Adam's Bridge: Side-Channel Protection](https://storage.googleapis.com/caliptra-website/presentations/ocp-workshop-2025/AdamsBridge_SCA_Presentation.pdf)
+- [Adam's Bridge: Side-Channel Protection](/caliptra-web/docs/adamsbridge-sca-presentation.pdf)
