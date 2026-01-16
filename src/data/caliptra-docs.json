@@ -2,19 +2,19 @@
   "repositories": {
     "Caliptra": {
       "pattern": "https://github.com/chipsalliance/Caliptra/blob/{ref}/{doc}",
-      "ref": "d96ec795ef44dfdeb5a2def514573376d93c41cd"
+      "ref": "main"
     },
     "Caliptra Subsystem": {
       "pattern": "https://github.com/chipsalliance/caliptra-ss/blob/{ref}/{doc}",
-      "ref": "40367c04ca3d36d89a08bef57238a4823bde74d4"
+      "ref": "main"
     },
     "Caliptra RTL": {
       "pattern": "https://github.com/chipsalliance/caliptra-rtl/blob/{ref}/{doc}",
-      "ref": "32b51fc0b7bd2e6b8c5bac1446d98aa03888c831"
+      "ref": "main"
     },
     "VeeR EL2 RISC-V Core": {
       "pattern": "https://github.com/chipsalliance/Cores-VeeR-EL2/blob/{ref}/{doc}",
-      "ref": "ed1be427509322bb3f5ac8a372f46463e8faa484"
+      "ref": "main"
     },
     "Caliptra SW": {
       "pattern": "https://github.com/chipsalliance/caliptra-sw/blob/{ref}/{doc}",
@@ -30,11 +30,11 @@
     },
     "I3C Core": {
       "pattern": "https://github.com/chipsalliance/i3c-core/blob/{ref}/{doc}",
-      "ref": "fe68e0dfb704efec4684168b839906a2a089e05e"
+      "ref": "v1p4-patches"
     },
     "Adam's Bridge": {
       "pattern": "https://github.com/chipsalliance/adams-bridge/blob/{ref}/{doc}",
-      "ref": "ea6dedf31ab339f2f50428481349c78cb392d6d0"
+      "ref": "main"
     }
   },
   "documents": [
@@ -585,7 +585,7 @@
       "doc": "README.md"
     },
     {
-      "category": "Hardware",
+      "category": "Governance",
       "name": "Contributing to Caliptra",
       "summary": "Guidelines for contributing to the project",
       "repo": "Caliptra",
