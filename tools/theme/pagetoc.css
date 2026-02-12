@@ -1,0 +1,142 @@
+/* Page Table of Contents Styles */
+/* SPDX-License-Identifier: Apache-2.0 */
+
+/* Override mdbook's default content max-width for wider content */
+:root {
+    --content-max-width: 1200px !important;
+}
+
+/* Direct override for content containers */
+.content main,
+main {
+    max-width: 1200px !important;
+}
+
+/* Table Styles - make tables wider and more readable */
+table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    display: table;
+}
+
+table th,
+table td {
+    padding: 8px 12px;
+    border: 1px solid var(--table-border-color, #ddd);
+    text-align: left;
+}
+
+table th {
+    background-color: var(--table-header-bg, #f6f8fa);
+    font-weight: 600;
+}
+
+table tr:nth-child(even) {
+    background-color: var(--table-alternate-bg, #f9f9f9);
+}
+
+/* Allow tables to scroll horizontally on small screens */
+.table-wrapper {
+    overflow-x: auto;
+    margin: 1em 0;
+}
+
+/* Hide on smaller screens */
+@media only screen and (max-width: 1439px) {
+    .sidetoc {
+        display: none;
+    }
+}
+
+/* Show on larger screens */
+@media only screen and (min-width: 1440px) {
+    .sidetoc {
+        position: sticky;
+        top: 80px;
+        margin-left: 20px;
+        width: 280px;
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
+        flex-shrink: 0;
+    }
+
+    .content-wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #content {
+        flex-grow: 1;
+        min-width: 0;
+    }
+
+    .pagetoc {
+        font-size: 0.9em;
+        line-height: 1.4;
+    }
+
+    .pagetoc-title {
+        font-weight: bold;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid var(--quote-border);
+        color: var(--fg);
+    }
+
+    .pagetoc a {
+        display: block;
+        padding: 4px 0;
+        color: var(--inline-code-color);
+        text-decoration: none;
+        border-left: 2px solid transparent;
+        padding-left: 10px;
+    }
+
+    .pagetoc a:hover {
+        color: var(--links);
+        border-left-color: var(--links);
+    }
+
+    .pagetoc a.active {
+        color: var(--links);
+        border-left-color: var(--links);
+        font-weight: 500;
+    }
+
+    /* Indent based on header level */
+    .pagetoc-h2 {
+        padding-left: 10px !important;
+    }
+
+    .pagetoc-h3 {
+        padding-left: 20px !important;
+        font-size: 0.95em;
+    }
+
+    .pagetoc-h4 {
+        padding-left: 30px !important;
+        font-size: 0.9em;
+    }
+
+    .pagetoc-h5,
+    .pagetoc-h6 {
+        padding-left: 40px !important;
+        font-size: 0.85em;
+    }
+
+    /* Scrollbar styling */
+    .sidetoc::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .sidetoc::-webkit-scrollbar-thumb {
+        background-color: var(--scrollbar);
+        border-radius: 3px;
+    }
+
+    .sidetoc::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+}
