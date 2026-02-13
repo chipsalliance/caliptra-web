@@ -1,0 +1,173 @@
+[
+  {
+    "title": "Caliptra Overview",
+    "source_repo": "caliptra",
+    "source_path": "doc/caliptra_1x/Caliptra.md",
+    "dest_path": "caliptra_overview.md",
+    "max_version": "1.2"
+  },
+  {
+    "title": "Caliptra Overview",
+    "source_repo": "caliptra",
+    "source_path": "doc/Caliptra.md",
+    "dest_path": "caliptra_overview.md",
+    "min_version": "2.1"
+  },
+  {
+    "title": "Hardware Specification",
+    "source_repo": "caliptra-rtl",
+    "source_path": "docs/CaliptraHardwareSpecification.md",
+    "dest_path": "hardware/hardware_spec.md"
+  },
+  {
+    "title": "Integration Specification",
+    "source_repo": "caliptra-rtl",
+    "source_path": "docs/CaliptraIntegrationSpecification.md",
+    "dest_path": "hardware/integration_spec.md"
+  },
+  {
+    "title": "Adam's Bridge Hardware Specification",
+    "source_repo": "adams-bridge",
+    "source_path": "docs/AdamsBridgeHardwareSpecification.md",
+    "dest_path": "hardware/adams_bridge_spec.md",
+    "min_version": "2.0"
+  },
+  {
+    "title": "ML-DSA Documentation",
+    "source_repo": "adams-bridge",
+    "source_path": "docs/AdamsBridge_MLDSA.md",
+    "dest_path": "hardware/adams_bridge_mldsa.md",
+    "min_version": "2.1"
+  },
+  {
+    "title": "ML-KEM Documentation",
+    "source_repo": "adams-bridge",
+    "source_path": "docs/AdamsBridge_MLKEM.md",
+    "dest_path": "hardware/adams_bridge_mlkem.md",
+    "min_version": "2.1"
+  },
+  {
+    "title": "Subsystem Hardware Specification",
+    "source_repo": "caliptra-ss",
+    "source_path": "docs/CaliptraSSHardwareSpecification.md",
+    "dest_path": "subsystem/ss_hardware_spec.md",
+    "min_version": "2.0"
+  },
+  {
+    "title": "Subsystem Integration Specification",
+    "source_repo": "caliptra-ss",
+    "source_path": "docs/CaliptraSSIntegrationSpecification.md",
+    "dest_path": "subsystem/ss_integration_spec.md",
+    "min_version": "2.0"
+  },
+  {
+    "title": "OTP Fuse Map (default)",
+    "source_repo": "caliptra-ss",
+    "source_path": "src/fuse_ctrl/doc/otp_ctrl_mmap.md",
+    "dest_path": "subsystem/otp_fuse_map.md",
+    "min_version": "2.0"
+  },
+  {
+    "title": "ROM Specification",
+    "source_repo": "caliptra-sw",
+    "source_path": "rom/dev/README.md",
+    "dest_path": "firmware/rom_spec.md"
+  },
+  {
+    "title": "Auth Manifest Specification",
+    "source_repo": "caliptra-sw",
+    "source_path": "auth-manifest/README.md",
+    "dest_path": "firmware/auth_manifest.md",
+    "min_version": "1.2"
+  },
+  {
+    "title": "FMC Specification",
+    "source_repo": "caliptra-sw",
+    "source_path": "fmc/README.md",
+    "dest_path": "firmware/fmc_spec.md"
+  },
+  {
+    "title": "Runtime Specification",
+    "source_repo": "caliptra-sw",
+    "source_path": "runtime/README.md",
+    "dest_path": "firmware/runtime_spec.md"
+  },
+  {
+    "title": "Caliptra Specification",
+    "source_repo": "caliptra",
+    "source_path": "doc/caliptra_20/Caliptra.ocp",
+    "dest_path": "caliptra_spec.md",
+    "min_version": "2.0",
+    "max_version": "2.0"
+  },
+  {
+    "title": "OCP L.O.C.K. Specification",
+    "source_repo": "caliptra",
+    "source_path": "doc/ocp_lock/lock_spec.ocp",
+    "dest_path": "lock_spec.md",
+    "min_version": "2.1"
+  },
+  {
+    "title": "I3C Core Specification",
+    "source_repo": "i3c-core",
+    "source_path": "doc/source/introduction.md",
+    "dest_path": "subsystem/i3c_spec.md",
+    "min_version": "2.0"
+  },
+  {
+    "title": "Overview",
+    "source_repo": "i3c-core",
+    "source_path": "doc/source/overview.md",
+    "dest_path": "subsystem/i3c_overview.md",
+    "min_version": "2.0"
+  },
+  {
+    "title": "PHY Layer",
+    "source_repo": "i3c-core",
+    "source_path": "doc/source/phy.md",
+    "dest_path": "subsystem/i3c_phy.md",
+    "min_version": "2.0"
+  },
+  {
+    "title": "Verification",
+    "source_repo": "i3c-core",
+    "source_path": "doc/source/dv.md",
+    "dest_path": "subsystem/i3c_dv.md",
+    "min_version": "2.0"
+  },
+  {
+    "title": "Extended Capabilities",
+    "source_repo": "i3c-core",
+    "source_path": "doc/source/ext_cap.md",
+    "dest_path": "subsystem/i3c_ext_cap.md",
+    "min_version": "2.0"
+  },
+  {
+    "title": "Recovery Flow",
+    "source_repo": "i3c-core",
+    "source_path": "doc/source/recovery_flow.md",
+    "dest_path": "subsystem/i3c_recovery_flow.md",
+    "min_version": "2.0"
+  },
+  {
+    "title": "AXI ID Filtering",
+    "source_repo": "i3c-core",
+    "source_path": "doc/source/axi_id_filtering.md",
+    "dest_path": "subsystem/i3c_axi_id_filtering.md",
+    "min_version": "2.0"
+  },
+  {
+    "title": "AXI Recovery Flow",
+    "source_repo": "i3c-core",
+    "source_path": "doc/source/axi_recovery_flow.md",
+    "dest_path": "subsystem/i3c_axi_recovery_flow.md",
+    "min_version": "2.0"
+  },
+  {
+    "title": "Registers",
+    "source_repo": "i3c-core",
+    "source_path": "doc/source/registers.md",
+    "dest_path": "subsystem/i3c_registers.md",
+    "min_version": "2.0"
+  }
+]
