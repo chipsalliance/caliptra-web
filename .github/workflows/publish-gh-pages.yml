@@ -38,7 +38,7 @@ jobs:
       - name: Install prerequisites
         run: |
           npm install
-          pip install pyyaml
+          pip install -r tools/requirements-build_docs.txt
 
       - name: Build
         run: |
