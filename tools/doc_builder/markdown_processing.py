@@ -207,6 +207,7 @@ def normalize_markdown_tables(content: str) -> str:
     lines = content.split("\n")
     result = []
     in_table = False
+    in_code_block = False
     table_lines = []
     pre_table_context = []
 
@@ -237,6 +238,9 @@ def normalize_markdown_tables(content: str) -> str:
         for tbl_line in table_lines:
             # Remove leading whitespace from table rows (common error)
             stripped = tbl_line.strip()
+            # Replace escaped pipes (\|) with HTML entity before splitting;
+            # mdbook's pulldown-cmark doesn't support \| in tables.
+            stripped = stripped.replace("\\|", "&#124;")
             # Replace tabs with spaces
             stripped = stripped.replace("\t", " ")
             # Normalize multiple spaces to single space within cells
@@ -258,6 +262,21 @@ def normalize_markdown_tables(content: str) -> str:
 
     for line in lines:
         stripped = line.strip()
+
+        # Track fenced code blocks to avoid treating pipe-delimited lines
+        # inside code blocks as tables (e.g. "| CircuitGraph | ... |")
+        if stripped.startswith("```"):
+            if in_table:
+                flush_table()
+                in_table = False
+            in_code_block = not in_code_block
+            result.append(line)
+            continue
+
+        # Lines inside code blocks are never table rows
+        if in_code_block:
+            result.append(line)
+            continue
 
         # Check if this line looks like a table row
         if stripped.startswith("|") and stripped.endswith("|"):
