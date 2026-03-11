@@ -6,6 +6,12 @@
   "announcements": [
     {
       "id": "core-fw-2p0p1",
+      "title": "Caliptra Core 2.1.0 FW has been released.",
+      "date": "2026-03-10",
+      "url": "https://github.com/chipsalliance/caliptra-sw/releases/tag/fw-2.1.0"
+    },
+    {
+      "id": "core-fw-2p0p1",
       "title": "Caliptra Core 2.0.1 FW has been released.",
       "date": "2026-02-10",
       "url": "https://github.com/chipsalliance/caliptra-sw/releases/tag/fw-2.0.1"
