@@ -5,6 +5,18 @@
   },
   "announcements": [
     {
+      "id": "rtl-2p1p2-release",
+      "title": "Caliptra Core Patch 2.1.2 has been released.",
+      "date": "2026-03-19",
+      "url": "https://github.com/chipsalliance/caliptra-rtl/releases/tag/v2.1.2"
+    },
+    {
+      "id": "rtl-2p0p4-release",
+      "title": "Caliptra Core Patch 2.0.4 has been released.",
+      "date": "2026-03-19",
+      "url": "https://github.com/chipsalliance/caliptra-rtl/releases/tag/v2.0.4"
+    },
+    {
       "id": "core-fw-1p2p4",
       "title": "Caliptra Core 1.2.4 FW has been released.",
       "date": "2026-03-12",
