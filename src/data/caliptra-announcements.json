@@ -5,6 +5,18 @@
   },
   "announcements": [
     {
+      "id": "ss-2p1p2-release",
+      "title": "Caliptra Subsystem Patch 2.1.2 has been released.",
+      "date": "2026-03-22",
+      "url": "https://github.com/chipsalliance/caliptra-ss/releases/tag/css-v2.1.2"
+    },
+    {
+      "id": "ss-2p0p2-release",
+      "title": "Caliptra Subsystem Patch 2.0.2 has been released.",
+      "date": "2026-03-22",
+      "url": "https://github.com/chipsalliance/caliptra-ss/releases/tag/css-v2.0.2"
+    },
+    {
       "id": "rtl-2p1p2-release",
       "title": "Caliptra Core Patch 2.1.2 has been released.",
       "date": "2026-03-19",
