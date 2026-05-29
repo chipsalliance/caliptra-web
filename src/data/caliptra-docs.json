@@ -58,9 +58,9 @@
     "i3c-core": {
       "github": "chipsalliance/i3c-core",
       "versions": {
-        "default": "main",
-        "2.0": "main",
-        "2.1": "main"
+        "default": "v1p5",
+        "2.0": "v1p4-patches",
+        "2.1": "v1p5"
       }
     },
     "adams-bridge": {
