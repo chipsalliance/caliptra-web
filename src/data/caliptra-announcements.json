@@ -5,6 +5,18 @@
   },
   "announcements": [
     {
+      "id": "core-rom-2p1p2",
+      "title": "Caliptra Core 2.1.2 ROM has been released.",
+      "date": "2026-06-17",
+      "url": "https://github.com/chipsalliance/caliptra-sw/releases/tag/rom-2.1.2"
+    },
+    {
+      "id": "core-rom-2p0p3",
+      "title": "Caliptra Core 2.0.3 ROM has been released.",
+      "date": "2026-06-18",
+      "url": "https://github.com/chipsalliance/caliptra-sw/releases/tag/rom-2.0.3-1"
+    },
+    {
       "id": "mcu-rom-sdk-2p1p0rc1",
       "title": "Caliptra MCU ROM SDK 2.1.0rc1 has been released.",
       "date": "2026-05-20",
