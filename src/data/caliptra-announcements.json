@@ -5,6 +5,18 @@
   },
   "announcements": [
     {
+      "id": "core-fw-2p1p1",
+      "title": "Caliptra Core 2.1.1 FW has been released.",
+      "date": "2026-06-22",
+      "url": "https://github.com/chipsalliance/caliptra-sw/releases/tag/fw-2.1.1"
+    },
+    {
+      "id": "core-fw-2p0p2",
+      "title": "Caliptra Core 2.0.2 FW has been released.",
+      "date": "2026-06-22",
+      "url": "https://github.com/chipsalliance/caliptra-sw/releases/tag/fw-2.0.2"
+    },
+    {
       "id": "core-rom-2p1p2",
       "title": "Caliptra Core 2.1.2 ROM has been released.",
       "date": "2026-06-17",
