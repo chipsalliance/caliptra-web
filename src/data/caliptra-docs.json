@@ -557,6 +557,13 @@
     },
     {
       "category": "Tools",
+      "name": "DPE Certificate & CSR Visualizer (WASM)",
+      "summary": "Client-side WebAssembly tool for parsing and visualizing DPE TCB derivation trees, certificates, and CSRs",
+      "repo": "caliptra-dpe",
+      "href": "https://chipsalliance.github.io/caliptra-dpe/cert-printer/"
+    },
+    {
+      "category": "Tools",
       "name": "fuse_ctrl Partitions Generator",
       "summary": "A script for generation of configurable blocks for the fuse_ctrl instantiation",
       "repo": "caliptra-ss",

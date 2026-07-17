@@ -150,6 +150,36 @@ def generate_additional_resources_page(
     return "\n".join(lines)
 
 
+def generate_dpe_cert_visualizer_page() -> str:
+    """Generate markdown page for DPE Certificate & CSR Visualizer WASM tool."""
+    return (
+        "# DPE Certificate & CSR Visualizer\n\n"
+        "The **DPE Certificate & CSR Visualizer** is a 100% client-side WebAssembly (WASM) tool hosted at "
+        "[https://chipsalliance.github.io/caliptra-dpe/cert-printer/](https://chipsalliance.github.io/caliptra-dpe/cert-printer/).\n\n"
+        "It enables parsing, inspecting, and visualizing DICE/DPE TCB (Trusted Computing Base) context derivation trees, "
+        "certificates (X.509/DICE), CSRs, CMS SignedData, and binary DPE response packets directly in your browser with zero server latency. "
+        "Because all WebAssembly computation executes locally inside your browser, certificate data and payload details remain strictly private "
+        "and are never sent to or stored on any external server.\n\n"
+        "## Features\n\n"
+        "- **100% Client-Side Privacy**: Operates entirely within your local browser sandbox without transmitting or leaking certificate/CSR details to any server.\n"
+        "- **X.509 Certificate & CSR Parsing**: Decodes standard X.509 V3 certificates and PKCS#10 Certificate Signing Requests (CSRs).\n"
+        "- **DICE MultiTcbInfo / TcbInfo Extraction**: Parses `2.23.133.5.4.5` (`tcg-dice-MultiTcbInfo`) and `2.23.133.5.4.1` (`tcg-dice-TcbInfo`) ASN.1 structures into TCB context nodes.\n"
+        "- **TCB Context Graphing**: Constructs a directed acyclic graph (DAG) representing the DPE TCB context derivation chain using Mermaid.js.\n"
+        "- **DPE Profile Inference**: Inspects public key types (ECC P-256, P-384, ML-DSA), signature algorithms, and FWID OIDs (SHA-256 vs. SHA-384) to automatically infer the active DPE profile (e.g. `P256-SHA256`, `P384-SHA384`, `MLDSA-87`).\n"
+        "- **Interactive Visualizer**: Supports drag-and-drop file upload (`.der`, `.pem`, binary packets) and built-in sample certificates.\n\n"
+        "---\n\n"
+        "## Interactive Visualizer\n\n"
+        '<div style="margin: 1rem 0;">\n'
+        '  <a href="https://chipsalliance.github.io/caliptra-dpe/cert-printer/" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.6em 1.2em; background-color: #3b82f6; color: white; text-decoration: none; border-radius: 6px; font-weight: 500;">'
+        "Open Visualizer in New Tab ↗</a>\n"
+        "</div>\n\n"
+        '<iframe src="https://chipsalliance.github.io/caliptra-dpe/cert-printer/" style="width: 100%; height: 850px; border: 1px solid #334155; border-radius: 8px; margin-top: 1em;" title="DPE Certificate & CSR Visualizer"></iframe>\n\n'
+        "---\n\n"
+        "## Source Code & Repository\n\n"
+        "The source code and WebAssembly application are maintained in the [`chipsalliance/caliptra-dpe`](https://github.com/chipsalliance/caliptra-dpe) repository.\n"
+    )
+
+
 def generate_summary(
     version: str,
     doc_entries: list[DocEntry],
@@ -287,6 +317,11 @@ def generate_summary(
         lines.append(f"# Changes from {prev_version}")
         for title, dest_path, diff_filename in diff_entries:
             lines.append(f"- [{title}](./{diff_filename})")
+
+    # Tools & Utilities section
+    lines.append("")
+    lines.append("# Tools & Utilities")
+    lines.append("- [DPE Cert Visualizer](./tools/dpe_cert_visualizer.md)")
 
     # Additional Resources section (always at the bottom)
     lines.append("")
@@ -871,6 +906,14 @@ def build_version(
                     f"**[Click here if not redirected ↗]({ss_regs_url})**\n\n"
                     f"<script>window.location.href = '{ss_regs_url}';</script>\n"
                 )
+
+        # 4c. Generate DPE Cert Visualizer tool page
+        logger.info("  Generating DPE Cert Visualizer page...")
+        tools_dir = src_dir / "tools"
+        tools_dir.mkdir(parents=True, exist_ok=True)
+        (tools_dir / "dpe_cert_visualizer.md").write_text(
+            generate_dpe_cert_visualizer_page()
+        )
 
         # 5. Generate book.toml
         book_toml = generate_book_toml(version)
