@@ -5,6 +5,12 @@
   },
   "announcements": [
     {
+      "id": "core-2px-cert",
+      "title": "Caliptra v2.x FIPS certification of cryptographic algorithms has been completed.",
+      "date": "2026-07-17",
+      "url": "https://github.com/chipsalliance/Caliptra/blob/main/doc/caliptra_20/fips/README.md"
+    },
+    {
       "id": "mcu-rom-sdk-2p1p0",
       "title": "Caliptra MCU ROM SDK 2.1.0 has been released.",
       "date": "2026-07-10",
