@@ -5,6 +5,12 @@
   },
   "announcements": [
     {
+      "id": "caliptra-21-subsystem-silicon-powers-on",
+      "title": "First Caliptra 2.1 Subsystem silicon has successfully powered on.",
+      "date": "2026-08-19",
+      "url": "/caliptra-web/blog/caliptra-21-subsystem-silicon-powers-on"
+    },
+    {
       "id": "core-2px-cert",
       "title": "Caliptra v2.x FIPS certification of cryptographic algorithms has been completed.",
       "date": "2026-07-17",

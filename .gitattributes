@@ -5,3 +5,8 @@ public/docs/caliptra-dot-ocp-2025.pptx filter=lfs diff=lfs merge=lfs -text
 public/docs/caliptra-fips-2025.pptx filter=lfs diff=lfs merge=lfs -text
 public/docs/caliptra-ocp-lock-presentation.pdf filter=lfs diff=lfs merge=lfs -text
 public/docs/caliptra-subsystem-provisioning.pdf filter=lfs diff=lfs merge=lfs -text
+"public/docs/Caliptra 2.1 ASPEED Integration.pdf" filter=lfs diff=lfs merge=lfs -text
+"public/docs/Caliptra Partner Onboarding.pdf" filter=lfs diff=lfs merge=lfs -text
+"public/docs/Caliptra Subsystem Firmware Stack.pdf" filter=lfs diff=lfs merge=lfs -text
+"public/docs/Caliptra Tools.pdf" filter=lfs diff=lfs merge=lfs -text
+"public/docs/PUF Security Caliptra Services.pdf" filter=lfs diff=lfs merge=lfs -text
