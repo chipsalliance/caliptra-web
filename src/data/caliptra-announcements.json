@@ -5,6 +5,30 @@
   },
   "announcements": [
     {
+      "id": "mcu-rt-sdk-2p1p0",
+      "title": "Caliptra MCU Runtime SDK 2.1.0 has been released.",
+      "date": "2026-08-24",
+      "url": "https://github.com/chipsalliance/caliptra-mcu-sw/releases/tag/rt-sdk-2.1.0"
+    },
+    {
+      "id": "mcu-rt-sdk-2p0p0",
+      "title": "Caliptra MCU Runtime SDK 2.0.0 has been released.",
+      "date": "2026-08-24",
+      "url": "https://github.com/chipsalliance/caliptra-mcu-sw/releases/tag/rt-sdk-2.0.0"
+    },
+    {
+      "id": "core-fw-2p1p2",
+      "title": "Caliptra Core 2.1.2 FW has been released.",
+      "date": "2026-08-24",
+      "url": "https://github.com/chipsalliance/caliptra-sw/releases/tag/fw-2.1.2"
+    },
+    {
+      "id": "core-fw-2p0p3",
+      "title": "Caliptra Core 2.0.3 FW has been released.",
+      "date": "2026-08-24",
+      "url": "https://github.com/chipsalliance/caliptra-sw/releases/tag/fw-2.0.3"
+    },
+    {
       "id": "caliptra-21-subsystem-silicon-powers-on",
       "title": "First Caliptra 2.1 Subsystem silicon has successfully powered on.",
       "date": "2026-08-19",
