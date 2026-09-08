@@ -17,7 +17,8 @@ logger = logging.getLogger("build_docs")
 # Adjacent version pairs for diff generation
 VERSION_PAIRS = [
     ("2.1", "2.0"),
-    ("2.0", "1.2"),
+    ("2.0", "1.3"),
+    ("1.3", "1.2"),
     ("1.2", "1.1"),
     ("1.1", "1.0"),
 ]
@@ -361,13 +362,13 @@ def generate_version_diffs(
                 "Caliptra Spec: OCP (2.0) → Markdown (2.1)",
             )
         )
-    elif version == "2.0" and prev_version == "1.2":
-        # 1.2 markdown overview vs 2.0 OCP spec
+    elif version == "2.0" and prev_version == "1.3":
+        # 1.3 markdown overview vs 2.0 OCP spec
         cross_format_pairs.append(
             (
                 "caliptra_overview.md",
                 "caliptra_spec.md",
-                "Caliptra Spec: Markdown (1.2) → OCP (2.0)",
+                "Caliptra Spec: Markdown (1.3) → OCP (2.0)",
             )
         )
 

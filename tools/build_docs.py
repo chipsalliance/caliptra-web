@@ -45,7 +45,7 @@ from typing import Optional
 # Constants
 # =============================================================================
 
-VERSIONS = ["1.0", "1.1", "1.2", "2.0", "2.1"]
+VERSIONS = ["1.0", "1.1", "1.2", "1.3", "2.0", "2.1"]
 LATEST_VERSION = "2.1"
 
 # PlantUML configuration

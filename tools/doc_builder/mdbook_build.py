@@ -880,6 +880,7 @@ def build_version(
             "1.0": None,  # No registers for 1.0
             "1.1": "v1_1",
             "1.2": "v1_1",  # 1.2 uses v1_1 registers
+            "1.3": "v1_1",  # 1.3 has no RTL changes; same registers as 1.2
             "2.0": "v2_0",
             "2.1": "v2_1",
         }
