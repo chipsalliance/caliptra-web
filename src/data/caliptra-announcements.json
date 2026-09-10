@@ -5,6 +5,12 @@
   },
   "announcements": [
     {
+      "id": "core-fw-1p3p0",
+      "title": "Caliptra Core 1.3.0 FW has been released.",
+      "date": "2026-09-03",
+      "url": "https://github.com/chipsalliance/caliptra-sw/releases/tag/rt-1.3.0"
+    },
+    {
       "id": "mcu-rt-sdk-2p1p0",
       "title": "Caliptra MCU Runtime SDK 2.1.0 has been released.",
       "date": "2026-08-24",
