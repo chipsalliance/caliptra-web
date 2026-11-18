@@ -5,6 +5,12 @@
   },
   "announcements": [
     {
+      "id": "core-rom-2p0p5-fw-2p0p4",
+      "title": "Caliptra Core ROM 2.0.5 and FW 2.0.4 have been released.",
+      "date": "2026-11-18",
+      "url": "https://github.com/chipsalliance/caliptra-sw/releases/tag/rom-2.0.5"
+    },
+    {
       "id": "mcu-rom-sdk-2p1p1",
       "title": "Caliptra MCU ROM SDK 2.1.1 has been released.",
       "date": "2026-11-17",
